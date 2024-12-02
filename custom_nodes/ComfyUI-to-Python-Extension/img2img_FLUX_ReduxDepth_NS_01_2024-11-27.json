@@ -1,0 +1,535 @@
+{
+  "10": {
+    "inputs": {
+      "width": [
+        "72",
+        1
+      ],
+      "height": [
+        "72",
+        2
+      ],
+      "batch_size": 1
+    },
+    "class_type": "EmptyLatentImage",
+    "_meta": {
+      "title": "Empty Latent Image"
+    }
+  },
+  "72": {
+    "inputs": {
+      "width": [
+        "83",
+        0
+      ],
+      "height": [
+        "84",
+        0
+      ],
+      "interpolation": "bicubic",
+      "method": "keep proportion",
+      "condition": "always",
+      "multiple_of": 16,
+      "image": [
+        "429",
+        0
+      ]
+    },
+    "class_type": "ImageResize+",
+    "_meta": {
+      "title": "🔧 Image Resize"
+    }
+  },
+  "83": {
+    "inputs": {
+      "value": 1024
+    },
+    "class_type": "INTConstant",
+    "_meta": {
+      "title": "Width"
+    }
+  },
+  "84": {
+    "inputs": {
+      "value": 1024
+    },
+    "class_type": "INTConstant",
+    "_meta": {
+      "title": "Height"
+    }
+  },
+  "174": {
+    "inputs": {
+      "text": "a girl looking at a house on fire",
+      "clip": [
+        "319",
+        0
+      ]
+    },
+    "class_type": "CLIPTextEncode",
+    "_meta": {
+      "title": "CLIP Text Encode (Prompt)"
+    }
+  },
+  "175": {
+    "inputs": {
+      "text": "",
+      "clip": [
+        "319",
+        0
+      ]
+    },
+    "class_type": "CLIPTextEncode",
+    "_meta": {
+      "title": "CLIP Text Encode (Prompt)"
+    }
+  },
+  "197": {
+    "inputs": {
+      "pixels": [
+        "360",
+        0
+      ],
+      "vae": [
+        "359",
+        0
+      ]
+    },
+    "class_type": "VAEEncode",
+    "_meta": {
+      "title": "VAE Encode"
+    }
+  },
+  "271": {
+    "inputs": {
+      "Input": 1,
+      "conditioning1": [
+        "431",
+        0
+      ],
+      "conditioning2": [
+        "431",
+        0
+      ]
+    },
+    "class_type": "CR Conditioning Input Switch",
+    "_meta": {
+      "title": "🔀 CR Conditioning Input Switch"
+    }
+  },
+  "272": {
+    "inputs": {
+      "Input": 1,
+      "conditioning1": [
+        "431",
+        1
+      ],
+      "conditioning2": [
+        "431",
+        1
+      ]
+    },
+    "class_type": "CR Conditioning Input Switch",
+    "_meta": {
+      "title": "🔀 CR Conditioning Input Switch"
+    }
+  },
+  "319": {
+    "inputs": {
+      "Input": 1,
+      "clip1": [
+        "357",
+        0
+      ],
+      "clip2": [
+        "357",
+        0
+      ]
+    },
+    "class_type": "CR Clip Input Switch",
+    "_meta": {
+      "title": "🔀 CR Clip Input Switch"
+    }
+  },
+  "320": {
+    "inputs": {
+      "Input": 1,
+      "model1": [
+        "358",
+        0
+      ],
+      "model2": [
+        "358",
+        0
+      ]
+    },
+    "class_type": "CR Model Input Switch",
+    "_meta": {
+      "title": "🔀 CR Model Input Switch"
+    }
+  },
+  "321": {
+    "inputs": {
+      "samples": [
+        "362",
+        0
+      ],
+      "vae": [
+        "359",
+        0
+      ]
+    },
+    "class_type": "VAEDecode",
+    "_meta": {
+      "title": "VAE Decode"
+    }
+  },
+  "327": {
+    "inputs": {
+      "filename_prefix": [
+        "456",
+        0
+      ],
+      "images": [
+        "321",
+        0
+      ]
+    },
+    "class_type": "SaveImage",
+    "_meta": {
+      "title": "Save Image"
+    }
+  },
+  "357": {
+    "inputs": {
+      "clip_name1": "t5/t5xxl_fp16.safetensors",
+      "clip_name2": "clip_l.safetensors",
+      "type": "flux"
+    },
+    "class_type": "DualCLIPLoader",
+    "_meta": {
+      "title": "DualCLIPLoader"
+    }
+  },
+  "358": {
+    "inputs": {
+      "unet_name": "flux1-depth-dev.safetensors",
+      "weight_dtype": "default"
+    },
+    "class_type": "UNETLoader",
+    "_meta": {
+      "title": "Load Diffusion Model"
+    }
+  },
+  "359": {
+    "inputs": {
+      "vae_name": "FLUX1/ae.safetensors"
+    },
+    "class_type": "VAELoader",
+    "_meta": {
+      "title": "Load VAE"
+    }
+  },
+  "360": {
+    "inputs": {
+      "image": [
+        "72",
+        0
+      ]
+    },
+    "class_type": "GetImageSizeAndCount",
+    "_meta": {
+      "title": "Get Image Size & Count"
+    }
+  },
+  "362": {
+    "inputs": {
+      "noise": [
+        "365",
+        0
+      ],
+      "guider": [
+        "366",
+        0
+      ],
+      "sampler": [
+        "363",
+        0
+      ],
+      "sigmas": [
+        "364",
+        0
+      ],
+      "latent_image": [
+        "10",
+        0
+      ]
+    },
+    "class_type": "SamplerCustomAdvanced",
+    "_meta": {
+      "title": "SamplerCustomAdvanced"
+    }
+  },
+  "363": {
+    "inputs": {
+      "sampler_name": "euler"
+    },
+    "class_type": "KSamplerSelect",
+    "_meta": {
+      "title": "KSamplerSelect"
+    }
+  },
+  "364": {
+    "inputs": {
+      "scheduler": "simple",
+      "steps": 28,
+      "denoise": 1,
+      "model": [
+        "320",
+        0
+      ]
+    },
+    "class_type": "BasicScheduler",
+    "_meta": {
+      "title": "BasicScheduler"
+    }
+  },
+  "365": {
+    "inputs": {
+      "noise_seed": 341
+    },
+    "class_type": "RandomNoise",
+    "_meta": {
+      "title": "RandomNoise"
+    }
+  },
+  "366": {
+    "inputs": {
+      "model": [
+        "320",
+        0
+      ],
+      "conditioning": [
+        "442",
+        0
+      ]
+    },
+    "class_type": "BasicGuider",
+    "_meta": {
+      "title": "BasicGuider"
+    }
+  },
+  "374": {
+    "inputs": {
+      "images": [
+        "360",
+        0
+      ]
+    },
+    "class_type": "PreviewImage",
+    "_meta": {
+      "title": "Preview Image"
+    }
+  },
+  "382": {
+    "inputs": {
+      "guidance": 4,
+      "conditioning": [
+        "272",
+        0
+      ]
+    },
+    "class_type": "FluxGuidance",
+    "_meta": {
+      "title": "FluxGuidance"
+    }
+  },
+  "429": {
+    "inputs": {
+      "image": "7038548d-d204-4810-bb74-d1dea277200a.png",
+      "upload": "image"
+    },
+    "class_type": "LoadImage",
+    "_meta": {
+      "title": "Load Image"
+    }
+  },
+  "430": {
+    "inputs": {
+      "guidance": 15,
+      "conditioning": [
+        "174",
+        0
+      ]
+    },
+    "class_type": "FluxGuidance",
+    "_meta": {
+      "title": "FluxGuidance"
+    }
+  },
+  "431": {
+    "inputs": {
+      "positive": [
+        "430",
+        0
+      ],
+      "negative": [
+        "175",
+        0
+      ],
+      "vae": [
+        "359",
+        0
+      ],
+      "pixels": [
+        "436",
+        0
+      ]
+    },
+    "class_type": "InstructPixToPixConditioning",
+    "_meta": {
+      "title": "InstructPixToPixConditioning"
+    }
+  },
+  "435": {
+    "inputs": {
+      "images": [
+        "436",
+        0
+      ]
+    },
+    "class_type": "PreviewImage",
+    "_meta": {
+      "title": "Preview Image"
+    }
+  },
+  "436": {
+    "inputs": {
+      "da_model": [
+        "437",
+        0
+      ],
+      "images": [
+        "360",
+        0
+      ]
+    },
+    "class_type": "DepthAnything_V2",
+    "_meta": {
+      "title": "Depth Anything V2"
+    }
+  },
+  "437": {
+    "inputs": {
+      "model": "depth_anything_v2_vitl_fp32.safetensors"
+    },
+    "class_type": "DownloadAndLoadDepthAnythingV2Model",
+    "_meta": {
+      "title": "DownloadAndLoadDepthAnythingV2Model"
+    }
+  },
+  "438": {
+    "inputs": {
+      "clip_name": "sigclip_vision_patch14_384.safetensors"
+    },
+    "class_type": "CLIPVisionLoader",
+    "_meta": {
+      "title": "Load CLIP Vision"
+    }
+  },
+  "439": {
+    "inputs": {
+      "crop": "center",
+      "clip_vision": [
+        "438",
+        0
+      ],
+      "image": [
+        "440",
+        0
+      ]
+    },
+    "class_type": "CLIPVisionEncode",
+    "_meta": {
+      "title": "CLIP Vision Encode"
+    }
+  },
+  "440": {
+    "inputs": {
+      "image": "2013_CKS_01180_0005_000(the_court_of_pir_budaq_shiraz_iran_circa_1455-60074106).jpg",
+      "upload": "image"
+    },
+    "class_type": "LoadImage",
+    "_meta": {
+      "title": "Load Image"
+    }
+  },
+  "441": {
+    "inputs": {
+      "style_model_name": "flux1-redux-dev.safetensors"
+    },
+    "class_type": "StyleModelLoader",
+    "_meta": {
+      "title": "Load Style Model"
+    }
+  },
+  "442": {
+    "inputs": {
+      "strength": 0.5,
+      "conditioning": [
+        "431",
+        0
+      ],
+      "style_model": [
+        "441",
+        0
+      ],
+      "clip_vision_output": [
+        "439",
+        0
+      ]
+    },
+    "class_type": "StyleModelApplyAdvanced",
+    "_meta": {
+      "title": "Style Model Apply Advanced"
+    }
+  },
+  "447": {
+    "inputs": {
+      "width": 2000,
+      "height": 2000,
+      "position": "top-center",
+      "x_offset": 0,
+      "y_offset": 0,
+      "image": [
+        "440",
+        0
+      ]
+    },
+    "class_type": "ImageCrop+",
+    "_meta": {
+      "title": "🔧 Image Crop"
+    }
+  },
+  "448": {
+    "inputs": {
+      "images": [
+        "447",
+        0
+      ]
+    },
+    "class_type": "PreviewImage",
+    "_meta": {
+      "title": "Preview Image"
+    }
+  },
+  "456": {
+    "inputs": {
+      "text": "Flux_BFL_Depth_Redux"
+    },
+    "class_type": "CR Text",
+    "_meta": {
+      "title": "🔤 CR Text"
+    }
+  }
+}

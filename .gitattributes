@@ -1,0 +1,13 @@
+/web/assets/** linguist-generated
+/web/** linguist-vendored
+comfy/text_encoders/t5_pile_tokenizer/tokenizer.model filter=lfs diff=lfs merge=lfs -text
+custom_nodes/ComfyUI-KJNodes/intrinsic_loras/intrinsic_lora_sd15_albedo.safetensors filter=lfs diff=lfs merge=lfs -text
+custom_nodes/ComfyUI-KJNodes/intrinsic_loras/intrinsic_lora_sd15_depth.safetensors filter=lfs diff=lfs merge=lfs -text
+custom_nodes/ComfyUI-KJNodes/intrinsic_loras/intrinsic_lora_sd15_normal.safetensors filter=lfs diff=lfs merge=lfs -text
+custom_nodes/ComfyUI-KJNodes/intrinsic_loras/intrinsic_lora_sd15_shading.safetensors filter=lfs diff=lfs merge=lfs -text
+custom_nodes/rgthree-comfy/docs/rgthree_context_metadata.png filter=lfs diff=lfs merge=lfs -text
+custom_nodes/comfy_mtb/extern/frame_interpolation/moment.gif filter=lfs diff=lfs merge=lfs -text
+custom_nodes/comfy_mtb/extern/frame_interpolation/photos/one.png filter=lfs diff=lfs merge=lfs -text
+custom_nodes/comfy_mtb/extern/frame_interpolation/photos/two.png filter=lfs diff=lfs merge=lfs -text
+custom_nodes/comfy_mtb/extern/GFPGAN/inputs/whole_imgs/00.jpg filter=lfs diff=lfs merge=lfs -text
+custom_nodes/comfy_mtb/extern/GFPGAN/inputs/whole_imgs/10045.png filter=lfs diff=lfs merge=lfs -text

@@ -1,0 +1,114 @@
+{
+    "custom_nodes": [
+        {
+            "author": "BlenderNeko",
+            "title": "ltdrdata/ComfyUI_TiledKSampler",
+            "reference": "https://github.com/ltdrdata/ComfyUI_TiledKSampler",
+            "files": [
+                "https://github.com/ltdrdata/ComfyUI_TiledKSampler"
+            ],
+            "install_type": "git-clone",
+            "description": "PR for [a/https://github.com/BlenderNeko/ComfyUI_TiledKSampler/pull/59](https://github.com/BlenderNeko/ComfyUI_TiledKSampler/pull/59)"
+        },
+        {
+            "author": "leeooo001",
+            "title": "ComfyUI-leo-Hamer",
+            "reference": "https://github.com/leeooo001/ComfyUI-leo-Hamer",
+            "files": [
+                "https://github.com/leeooo001/ComfyUI-leo-Hamer"
+            ],
+            "install_type": "git-clone",
+            "description": "Unoffice Hamer-ComfyUI by leo\nNOTE:base on [a/hamer](https://github.com/geopavlakos/hamer)"
+        },
+        {
+            "author": "leeooo001",
+            "title": "ComfyUI-leo-GVHMR",
+            "reference": "https://github.com/leeooo001/ComfyUI-leo-GVHMR",
+            "files": [
+                "https://github.com/leeooo001/ComfyUI-leo-GVHMR"
+            ],
+            "install_type": "git-clone",
+            "description": "Unoffice Hamer-ComfyUI by leo\nNOTE:base on [a/GVHMR](https://github.com/zju3dv/GVHMR)"
+        },
+        {
+            "author": "leeooo001",
+            "title": "RealisDance-ComfyUI",
+            "reference": "https://github.com/leeooo001/ComfyUI-leo-RealisDance",
+            "files": [
+                "https://github.com/leeooo001/ComfyUI-leo-RealisDance"
+            ],
+            "install_type": "git-clone",
+            "description": "Unoffice RealisDance-ComfyUI by leo\nNOTE:base on [a/RealisDance](https://github.com/damo-cv/RealisDance), modified on [a/RealisDanceComfyui](https://github.com/AIFSH/RealisDance-ComfyUI)"
+        },
+        {
+            "author": "jags111",
+            "title": "NyaamZ/efficiency-nodes-ED",
+            "reference": "https://github.com/NyaamZ/efficiency-nodes-ED",
+            "files": [
+                "https://github.com/NyaamZ/efficiency-nodes-ED"
+            ],
+            "install_type": "git-clone",
+            "description": "This forked repo supports efficiency-nodes-comfyui. Additional features."
+        },
+        {
+            "author": "SeaArtLab",
+            "title": "zer0int/ComfyUI-Long-CLIP",
+            "reference": "https://github.com/zer0int/ComfyUI-Long-CLIP",
+            "files": [
+                "https://github.com/zer0int/ComfyUI-Long-CLIP"
+            ],
+            "install_type": "git-clone",
+            "description": "This forked repo supports FLUX.1 not only SD1.5, SDXL."
+        },
+        {
+            "author": "meimeilook",
+            "title": "ComfyUI_IPAdapter_plus.old [backward compatbility]",
+            "reference": "https://github.com/meimeilook/ComfyUI_IPAdapter_plus.old",
+            "files": [
+                "https://github.com/meimeilook/ComfyUI_IPAdapter_plus.old"
+            ],
+            "install_type": "git-clone",
+            "description": "This repo is created to provide backward compatibility for workflows configured with the old IPAdapter."
+        },
+        {
+            "author": "ZHO-ZHO-ZHO",
+            "title": "Dr.Lt.Data/ComfyUI-YoloWorld-EfficientSAM",
+            "reference": "https://github.com/ltdrdata/ComfyUI-YoloWorld-EfficientSAM",
+            "files": [
+                "https://github.com/ltdrdata/ComfyUI-YoloWorld-EfficientSAM"
+            ],
+            "install_type": "git-clone",
+            "description": "This fork includes [a/PR32](https://github.com/ZHO-ZHO-ZHO/ComfyUI-YoloWorld-EfficientSAM/pull/32)"
+        },
+        {
+            "author": "ertu110",
+            "title": "sdxl_prompt_style",
+            "reference": "https://github.com/ertu110/sdxl_prompt_style",
+            "files": [
+                "https://github.com/ertu110/sdxl_prompt_style"
+            ],
+            "install_type": "git-clone",
+            "description": "This project is a complete benchmark [a/https://github.com/twri/sdxl_prompt_styler](https://github.com/twri/sdxl_prompt_styler) A large amount of code inside comes from https://github.com/twri/sdxl_prompt_styler Project and [a/https://www.nodecafe.org/package/pythongosssss_ComfyUI-Custom-Scripts](https://www.nodecafe.org/package/pythongosssss_ComfyUI-Custom-Scripts) project\nThe functionality of this project is related to https://github.com/twri/sdxl_prompt_styler Highly overlapping, the only purpose of creating this project is because there are too many styles when selecting, resulting in a long and inconvenient dropdown box. Therefore, To address this issue, this project has added a secondary menu to the style."
+        },
+        {
+            "author": "gustproof",
+            "title": "ComfyUI_IPAdapter_plus_Style_Components",
+            "reference": "https://github.com/gustproof/ComfyUI_IPAdapter_plus_Style_Components",
+            "files": [
+                "https://github.com/gustproof/ComfyUI_IPAdapter_plus_Style_Components"
+            ],
+            "install_type": "git-clone",
+            "description": "Style Components is an IP-Adapter model conditioned on anime styles. The style embeddings can either be extracted from images or created manually. This repo currently only supports the SDXL model trained on AutismmixPony."
+        },
+        {
+            "author": "gameltb",
+            "title": "comfyui-stablsr",
+            "reference": "https://github.com/gameltb/Comfyui-StableSR",
+            "files": [
+                "https://github.com/gameltb/Comfyui-StableSR"
+            ],
+            "install_type": "git-clone",
+            "description": "This is a development respository for debugging migration of StableSR to ComfyUI\n\nNOTE:Forked from [https://github.com/gameltb/Comfyui-StableSR]\nPut the StableSR [a/webui_786v_139.ckpt](https://huggingface.co/Iceclear/StableSR/resolve/main/webui_768v_139.ckpt) model into Comyfui/models/stablesr/, Put the StableSR [a/stablesr_768v_000139.ckpt](https://huggingface.co/Iceclear/StableSR/resolve/main/stablesr_768v_000139.ckpt) model into Comyfui/models/checkpoints/"
+        }
+    ]
+}

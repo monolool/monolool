@@ -1,0 +1,170 @@
+## ComfyUI-Manager: installing dependencies done.
+[2024-12-02 17:59:28.476] ** ComfyUI startup time: 2024-12-02 17:59:28.476943
+[2024-12-02 17:59:28.477] ** Platform: Linux
+[2024-12-02 17:59:28.477] ** Python version: 3.10.12 (main, Jun 11 2023, 05:26:28) [GCC 11.4.0]
+[2024-12-02 17:59:28.477] ** Python executable: /usr/bin/python
+[2024-12-02 17:59:28.477] ** ComfyUI Path: /home/ubuntu/comfy/ComfyUI/custom_nodes/ComfyUI-to-Python-Extension
+[2024-12-02 17:59:28.477] ** Log path: /home/ubuntu/comfy/ComfyUI/custom_nodes/ComfyUI-to-Python-Extension/comfyui.log
+[2024-12-02 17:59:30.153] 
+Prestartup times for custom nodes:
+[2024-12-02 17:59:30.153]    0.0 seconds: /home/ubuntu/comfy/ComfyUI/custom_nodes/rgthree-comfy
+[2024-12-02 17:59:30.153]    3.1 seconds: /home/ubuntu/comfy/ComfyUI/custom_nodes/ComfyUI-Manager
+[2024-12-02 17:59:30.154] 
+Total VRAM 80995 MB, total RAM 201282 MB
+[2024-12-02 17:59:30.453] pytorch version: 2.5.1+cu124
+[2024-12-02 17:59:32.088] xformers version: 0.0.28.post1
+[2024-12-02 17:59:32.088] Set vram state to: NORMAL_VRAM
+[2024-12-02 17:59:32.088] Device: cuda:0 NVIDIA H100 PCIe : native
+[2024-12-02 17:59:32.258] Using xformers cross attention
+[2024-12-02 17:59:32.682] Could not find the extra_model_paths config file.
+[2024-12-02 17:59:32.686] [Prompt Server] web root: /home/ubuntu/comfy/ComfyUI/web
+[2024-12-02 17:59:32.802] /home/ubuntu/.local/lib/python3.10/site-packages/kornia/feature/lightglue.py:44: FutureWarning: `torch.cuda.amp.custom_fwd(args...)` is deprecated. Please use `torch.amp.custom_fwd(args..., device_type='cuda')` instead.
+  @torch.cuda.amp.custom_fwd(cast_inputs=torch.float32)
+[2024-12-02 17:59:33.146] Traceback (most recent call last):
+  File "/home/ubuntu/comfy/ComfyUI/nodes.py", line 2036, in load_custom_node
+    module_spec.loader.exec_module(module)
+  File "<frozen importlib._bootstrap_external>", line 883, in exec_module
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "/home/ubuntu/comfy/ComfyUI/comfy_extras/nodes_audio.py", line 1, in <module>
+    import torchaudio
+  File "/home/ubuntu/.local/lib/python3.10/site-packages/torchaudio/__init__.py", line 2, in <module>
+    from . import _extension  # noqa  # usort: skip
+  File "/home/ubuntu/.local/lib/python3.10/site-packages/torchaudio/_extension/__init__.py", line 42, in <module>
+    _check_cuda_version()
+  File "/home/ubuntu/.local/lib/python3.10/site-packages/torchaudio/_extension/utils.py", line 175, in _check_cuda_version
+    raise RuntimeError(
+RuntimeError: Detected that PyTorch and TorchAudio were compiled with different CUDA versions. PyTorch has CUDA version 12.4 whereas TorchAudio has CUDA version 12.1. Please install the TorchAudio version that matches your PyTorch version.
+
+[2024-12-02 17:59:33.146] Cannot import /home/ubuntu/comfy/ComfyUI/comfy_extras/nodes_audio.py module for custom nodes: Detected that PyTorch and TorchAudio were compiled with different CUDA versions. PyTorch has CUDA version 12.4 whereas TorchAudio has CUDA version 12.1. Please install the TorchAudio version that matches your PyTorch version.
+[2024-12-02 17:59:33.454] ------------------------------------------
+[2024-12-02 17:59:33.454] [34mComfyroll Studio v1.76 : [92m 175 Nodes Loaded[0m
+[2024-12-02 17:59:33.454] ------------------------------------------
+[2024-12-02 17:59:33.454] ** For changes, please see patch notes at https://github.com/Suzie1/ComfyUI_Comfyroll_CustomNodes/blob/main/Patch_Notes.md
+[2024-12-02 17:59:33.454] ** For help, please see the wiki at https://github.com/Suzie1/ComfyUI_Comfyroll_CustomNodes/wiki
+[2024-12-02 17:59:33.454] ------------------------------------------
+[2024-12-02 17:59:36.011] /home/ubuntu/.local/lib/python3.10/site-packages/numba/np/ufunc/parallel.py:371: NumbaWarning: [1mThe TBB threading layer requires TBB version 2021 update 6 or later i.e., TBB_INTERFACE_VERSION >= 12060. Found TBB_INTERFACE_VERSION = 12050. The TBB threading layer is disabled.[0m
+  warnings.warn(problem)
+[2024-12-02 17:59:36.157] [36;20m[comfy_mtb] | INFO -> loaded [96m87[0m nodes successfuly[0m
+[2024-12-02 17:59:36.167] Total VRAM 80995 MB, total RAM 201282 MB
+[2024-12-02 17:59:36.167] pytorch version: 2.5.1+cu124
+[2024-12-02 17:59:36.167] xformers version: 0.0.28.post1
+[2024-12-02 17:59:36.167] Set vram state to: NORMAL_VRAM
+[2024-12-02 17:59:36.167] Device: cuda:0 NVIDIA H100 PCIe : native
+[2024-12-02 17:59:36.201] ComfyUI found: /home/ubuntu/comfy/ComfyUI
+[2024-12-02 17:59:36.201] '/home/ubuntu/comfy/ComfyUI' added to sys.path
+[2024-12-02 17:59:36.211] ### Loading: ComfyUI-Manager (V2.54)
+[2024-12-02 17:59:36.304] ### ComfyUI Revision: 2876 [8e4118c0] | Released on '2024-12-01'
+[2024-12-02 17:59:36.328] 
+[2024-12-02 17:59:36.328] [92m[rgthree-comfy] Loaded 42 fantastic nodes. 🎉[00m
+[2024-12-02 17:59:36.328] 
+[2024-12-02 17:59:36.329] 
+Import times for custom nodes:
+[2024-12-02 17:59:36.329]    0.0 seconds: /home/ubuntu/comfy/ComfyUI/custom_nodes/ComfyUI-SaveAsScript
+[2024-12-02 17:59:36.329]    0.0 seconds: /home/ubuntu/comfy/ComfyUI/custom_nodes/websocket_image_save.py
+[2024-12-02 17:59:36.329]    0.0 seconds: /home/ubuntu/comfy/ComfyUI/custom_nodes/ComfyUI_essentials
+[2024-12-02 17:59:36.329]    0.0 seconds: /home/ubuntu/comfy/ComfyUI/custom_nodes/rgthree-comfy
+[2024-12-02 17:59:36.329]    0.0 seconds: /home/ubuntu/comfy/ComfyUI/custom_nodes/ComfyUI-DepthAnythingV2
+[2024-12-02 17:59:36.329]    0.0 seconds: /home/ubuntu/comfy/ComfyUI/custom_nodes/ComfyUI-KJNodes
+[2024-12-02 17:59:36.329]    0.0 seconds: /home/ubuntu/comfy/ComfyUI/custom_nodes/ComfyUI-to-Python-Extension
+[2024-12-02 17:59:36.329]    0.1 seconds: /home/ubuntu/comfy/ComfyUI/custom_nodes/ComfyUI-Manager
+[2024-12-02 17:59:36.329]    0.3 seconds: /home/ubuntu/comfy/ComfyUI/custom_nodes/ComfyUI_Comfyroll_CustomNodes
+[2024-12-02 17:59:36.329]    2.7 seconds: /home/ubuntu/comfy/ComfyUI/custom_nodes/comfy_mtb
+[2024-12-02 17:59:36.329] 
+[2024-12-02 17:59:36.329] WARNING: some comfy_extras/ nodes did not import correctly. This may be because they are missing some dependencies.
+
+[2024-12-02 17:59:36.329] IMPORT FAILED: nodes_audio.py
+[2024-12-02 17:59:36.329] 
+This issue might be caused by new missing dependencies added the last time you updated ComfyUI.
+[2024-12-02 17:59:36.329] Please do a: pip install -r requirements.txt
+[2024-12-02 17:59:36.329] 
+[2024-12-02 17:59:36.524] [ComfyUI-Manager] default cache updated: https://raw.githubusercontent.com/ltdrdata/ComfyUI-Manager/main/model-list.json
+[2024-12-02 17:59:36.526] [ComfyUI-Manager] default cache updated: https://raw.githubusercontent.com/ltdrdata/ComfyUI-Manager/main/alter-list.json
+[2024-12-02 17:59:36.568] [ComfyUI-Manager] default cache updated: https://raw.githubusercontent.com/ltdrdata/ComfyUI-Manager/main/custom-node-list.json
+[2024-12-02 17:59:36.585] [ComfyUI-Manager] default cache updated: https://raw.githubusercontent.com/ltdrdata/ComfyUI-Manager/main/github-stats.json
+[2024-12-02 17:59:36.622] [ComfyUI-Manager] default cache updated: https://raw.githubusercontent.com/ltdrdata/ComfyUI-Manager/main/extension-node-map.json
+[2024-12-02 17:59:37.565] clip missing: ['text_projection.weight']
+[2024-12-02 17:59:37.780] Using xformers attention in VAE
+[2024-12-02 17:59:37.780] Using xformers attention in VAE
+[2024-12-02 17:59:38.165] model weight dtype torch.bfloat16, manual cast: None
+[2024-12-02 17:59:38.165] model_type FLUX
+[2024-12-02 17:59:40.347] Loading model from: /home/ubuntu/comfy/ComfyUI/models/depthanything/depth_anything_v2_vitl_fp32.safetensors
+[2024-12-02 17:59:40.348] using MLP layer as FFN
+[2024-12-02 17:59:40.784] Running on local URL:  http://127.0.0.1:7860
+[2024-12-02 17:59:41.104] HTTP Request: GET http://127.0.0.1:7860/startup-events "HTTP/1.1 200 OK"
+[2024-12-02 17:59:41.394] HTTP Request: GET https://api.gradio.app/pkg-version "HTTP/1.1 200 OK"
+[2024-12-02 17:59:41.395] /home/ubuntu/.local/lib/python3.10/site-packages/gradio/analytics.py:106: UserWarning: IMPORTANT: You are using gradio version 4.42.0, however version 4.44.1 is available, please upgrade. 
+--------
+  warnings.warn(
+[2024-12-02 17:59:41.426] HTTP Request: GET https://checkip.amazonaws.com/ "HTTP/1.1 200 "
+[2024-12-02 17:59:43.283] HTTP Request: HEAD http://127.0.0.1:7860/ "HTTP/1.1 200 OK"
+[2024-12-02 17:59:43.608] HTTP Request: GET https://api.gradio.app/v2/tunnel-request "HTTP/1.1 200 OK"
+[2024-12-02 17:59:43.745] Running on public URL: https://9c55b8c06b69cab7d5.gradio.live
+[2024-12-02 17:59:43.745] 
+This share link expires in 72 hours. For free permanent hosting and GPU upgrades, run `gradio deploy` from Terminal to deploy to Spaces (https://huggingface.co/spaces)
+[2024-12-02 18:01:52.410] Requested to load FluxClipModel_
+[2024-12-02 18:01:52.410] Loading 1 new model
+[2024-12-02 18:01:54.089] loaded completely 0.0 9319.23095703125 True
+[2024-12-02 18:01:54.834] Requested to load AutoencodingEngine
+[2024-12-02 18:01:54.834] Loading 1 new model
+[2024-12-02 18:01:54.869] loaded completely 0.0 159.87335777282715 True
+[2024-12-02 18:01:56.801] Requested to load CLIPVisionModelProjection
+[2024-12-02 18:01:56.801] Loading 1 new model
+[2024-12-02 18:01:56.928] loaded completely 0.0 787.7150573730469 True
+[2024-12-02 18:01:57.207] Requested to load Flux
+[2024-12-02 18:01:57.208] Loading 1 new model
+[2024-12-02 18:02:00.988] loaded completely 0.0 22700.509887695312 True
+[2024-12-02 18:02:10.776] 100%|██████████████████████████████████████████████████████████████████████| 28/28 [00:09<00:00,  2.81it/s]100%|██████████████████████████████████████████████████████████████████████| 28/28 [00:09<00:00,  2.86it/s]
+[2024-12-02 18:02:11.255] {'ui': {'images': [{'filename': 'Flux_BFL_Depth_Redux_00017_.png', 'subfolder': '', 'type': 'output'}]}}
+[2024-12-02 18:02:11.255] Flux_BFL_Depth_Redux
+[2024-12-02 18:02:11.256] Traceback (most recent call last):
+[2024-12-02 18:02:11.256]   File "/home/ubuntu/comfy/ComfyUI/custom_nodes/ComfyUI-to-Python-Extension/demo_1.py", line 12, in get_value_at_index
+    return obj[index]
+[2024-12-02 18:02:11.256] KeyError: 0
+[2024-12-02 18:02:11.256] 
+During handling of the above exception, another exception occurred:
+
+[2024-12-02 18:02:11.256] Traceback (most recent call last):
+[2024-12-02 18:02:11.256]   File "/home/ubuntu/.local/lib/python3.10/site-packages/gradio/queueing.py", line 536, in process_events
+    response = await route_utils.call_process_api(
+[2024-12-02 18:02:11.256]   File "/home/ubuntu/.local/lib/python3.10/site-packages/gradio/route_utils.py", line 321, in call_process_api
+    output = await app.get_blocks().process_api(
+[2024-12-02 18:02:11.256]   File "/home/ubuntu/.local/lib/python3.10/site-packages/gradio/blocks.py", line 1935, in process_api
+    result = await self.call_function(
+[2024-12-02 18:02:11.256]   File "/home/ubuntu/.local/lib/python3.10/site-packages/gradio/blocks.py", line 1520, in call_function
+    prediction = await anyio.to_thread.run_sync(  # type: ignore
+[2024-12-02 18:02:11.256]   File "/home/ubuntu/.local/lib/python3.10/site-packages/anyio/to_thread.py", line 33, in run_sync
+    return await get_asynclib().run_sync_in_worker_thread(
+[2024-12-02 18:02:11.256]   File "/home/ubuntu/.local/lib/python3.10/site-packages/anyio/_backends/_asyncio.py", line 877, in run_sync_in_worker_thread
+    return await future
+[2024-12-02 18:02:11.256]   File "/home/ubuntu/.local/lib/python3.10/site-packages/anyio/_backends/_asyncio.py", line 807, in run
+    result = context.run(func, *args)
+[2024-12-02 18:02:11.256]   File "/home/ubuntu/.local/lib/python3.10/site-packages/gradio/utils.py", line 826, in wrapper
+    response = f(*args, **kwargs)
+[2024-12-02 18:02:11.257]   File "/home/ubuntu/comfy/ComfyUI/custom_nodes/ComfyUI-to-Python-Extension/demo_1.py", line 277, in generate_image
+    return get_value_at_index(saved, 0)
+[2024-12-02 18:02:11.257]   File "/home/ubuntu/comfy/ComfyUI/custom_nodes/ComfyUI-to-Python-Extension/demo_1.py", line 14, in get_value_at_index
+    return obj["result"][index]
+[2024-12-02 18:02:11.257] KeyError: 'result'
+[2024-12-02 18:02:11.257] [2024-12-02 18:06:25.235] Keyboard interruption in main thread... closing server.
+Traceback (most recent call last):
+[2024-12-02 18:06:25.427]   File "/home/ubuntu/.local/lib/python3.10/site-packages/gradio/blocks.py", line 2706, in block_thread
+[2024-12-02 18:06:25.429]     time.sleep(0.1)
+[2024-12-02 18:06:25.429] KeyboardInterrupt
+[2024-12-02 18:06:25.429] 
+During handling of the above exception, another exception occurred:
+
+[2024-12-02 18:06:25.429] Traceback (most recent call last):
+[2024-12-02 18:06:25.429]   File "/home/ubuntu/comfy/ComfyUI/custom_nodes/ComfyUI-to-Python-Extension/demo_1.py", line 301, in <module>
+[2024-12-02 18:06:25.430]     app.launch(share=True)
+[2024-12-02 18:06:25.430]   File "/home/ubuntu/.local/lib/python3.10/site-packages/gradio/blocks.py", line 2611, in launch
+[2024-12-02 18:06:25.431]     self.block_thread()
+[2024-12-02 18:06:25.431]   File "/home/ubuntu/.local/lib/python3.10/site-packages/gradio/blocks.py", line 2710, in block_thread
+[2024-12-02 18:06:25.432]     self.server.close()
+[2024-12-02 18:06:25.432]   File "/home/ubuntu/.local/lib/python3.10/site-packages/gradio/http_server.py", line 68, in close
+[2024-12-02 18:06:25.434]     self.thread.join(timeout=5)
+[2024-12-02 18:06:25.434]   File "/usr/lib/python3.10/threading.py", line 1100, in join
+[2024-12-02 18:06:25.435]     self._wait_for_tstate_lock(timeout=max(timeout, 0))
+[2024-12-02 18:06:25.435]   File "/usr/lib/python3.10/threading.py", line 1116, in _wait_for_tstate_lock
+[2024-12-02 18:06:25.435]     if lock.acquire(block, timeout):
+[2024-12-02 18:06:25.436] KeyboardInterrupt
+[2024-12-02 18:06:25.436] Killing tunnel 127.0.0.1:7860 <> https://9c55b8c06b69cab7d5.gradio.live
