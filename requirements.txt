@@ -11,3 +11,8 @@ numpy==1.24.3
 pyyaml
 scipy
 psutil
+numba
+colour-science
+rembg
+pixeloe
+transparent-background
