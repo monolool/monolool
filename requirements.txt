@@ -16,3 +16,4 @@ colour-science
 rembg
 pixeloe
 transparent-background
+spandrel
