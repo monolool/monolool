@@ -6,6 +6,7 @@ import torch
 import gradio as gr
 from PIL import Image
 from huggingface_hub import hf_hub_download
+import spaces
 
 hf_hub_download(repo_id="black-forest-labs/FLUX.1-Redux-dev", filename="flux1-redux-dev.safetensors", local_dir="models/style_models")
 hf_hub_download(repo_id="black-forest-labs/FLUX.1-Depth-dev", filename="flux1-depth-dev.safetensors", local_dir="models/diffusion_models")
@@ -88,72 +89,73 @@ from nodes import (
 import_custom_nodes()
 
 # Global variables for preloaded models and constants
-with torch.inference_mode():
+#with torch.inference_mode():
     # Initialize constants
-    intconstant = NODE_CLASS_MAPPINGS["INTConstant"]()
-    CONST_1024 = intconstant.get_value(value=1024)
-    
-    # Load CLIP
-    dualcliploader = DualCLIPLoader()
-    CLIP_MODEL = dualcliploader.load_clip(
-        clip_name1="t5/t5xxl_fp16.safetensors",
-        clip_name2="clip_l.safetensors",
-        type="flux",
-    )
-    
-    # Load VAE
-    vaeloader = VAELoader()
-    VAE_MODEL = vaeloader.load_vae(vae_name="FLUX1/ae.safetensors")
-    
-    # Load UNET
-    unetloader = UNETLoader()
-    UNET_MODEL = unetloader.load_unet(
-        unet_name="flux1-depth-dev.safetensors", weight_dtype="default"
-    )
-    
-    # Load CLIP Vision
-    clipvisionloader = CLIPVisionLoader()
-    CLIP_VISION_MODEL = clipvisionloader.load_clip(
-        clip_name="sigclip_vision_patch14_384.safetensors"
-    )
-    
-    # Load Style Model
-    stylemodelloader = StyleModelLoader()
-    STYLE_MODEL = stylemodelloader.load_style_model(
-        style_model_name="flux1-redux-dev.safetensors"
-    )
-    
-    # Initialize samplers
-    ksamplerselect = NODE_CLASS_MAPPINGS["KSamplerSelect"]()
-    SAMPLER = ksamplerselect.get_sampler(sampler_name="euler")
-    
-    # Initialize depth model
-    cr_clip_input_switch = NODE_CLASS_MAPPINGS["CR Clip Input Switch"]()
-    downloadandloaddepthanythingv2model = NODE_CLASS_MAPPINGS["DownloadAndLoadDepthAnythingV2Model"]()
-    DEPTH_MODEL = downloadandloaddepthanythingv2model.loadmodel(
-        model="depth_anything_v2_vitl_fp32.safetensors"
-    )
-    cliptextencode = CLIPTextEncode()
-    loadimage = LoadImage()
-    vaeencode = VAEEncode()
-    fluxguidance = NODE_CLASS_MAPPINGS["FluxGuidance"]()
-    instructpixtopixconditioning = NODE_CLASS_MAPPINGS["InstructPixToPixConditioning"]()
-    clipvisionencode = CLIPVisionEncode()
-    stylemodelapplyadvanced = NODE_CLASS_MAPPINGS["StyleModelApplyAdvanced"]()
-    emptylatentimage = EmptyLatentImage()
-    basicguider = NODE_CLASS_MAPPINGS["BasicGuider"]()
-    basicscheduler = NODE_CLASS_MAPPINGS["BasicScheduler"]()        
-    randomnoise = NODE_CLASS_MAPPINGS["RandomNoise"]()
-    samplercustomadvanced = NODE_CLASS_MAPPINGS["SamplerCustomAdvanced"]()
-    vaedecode = VAEDecode()
-    cr_text = NODE_CLASS_MAPPINGS["CR Text"]()
-    saveimage = SaveImage()
-    getimagesizeandcount = NODE_CLASS_MAPPINGS["GetImageSizeAndCount"]()
-    depthanything_v2 = NODE_CLASS_MAPPINGS["DepthAnything_V2"]()
-    imageresize = NODE_CLASS_MAPPINGS["ImageResize+"]()
+intconstant = NODE_CLASS_MAPPINGS["INTConstant"]()
+CONST_1024 = intconstant.get_value(value=1024)
+
+# Load CLIP
+dualcliploader = DualCLIPLoader()
+CLIP_MODEL = dualcliploader.load_clip(
+    clip_name1="t5/t5xxl_fp16.safetensors",
+    clip_name2="clip_l.safetensors",
+    type="flux",
+)
+
+# Load VAE
+vaeloader = VAELoader()
+VAE_MODEL = vaeloader.load_vae(vae_name="FLUX1/ae.safetensors")
+
+# Load UNET
+unetloader = UNETLoader()
+UNET_MODEL = unetloader.load_unet(
+    unet_name="flux1-depth-dev.safetensors", weight_dtype="default"
+)
+
+# Load CLIP Vision
+clipvisionloader = CLIPVisionLoader()
+CLIP_VISION_MODEL = clipvisionloader.load_clip(
+    clip_name="sigclip_vision_patch14_384.safetensors"
+)
+
+# Load Style Model
+stylemodelloader = StyleModelLoader()
+STYLE_MODEL = stylemodelloader.load_style_model(
+    style_model_name="flux1-redux-dev.safetensors"
+)
+
+# Initialize samplers
+ksamplerselect = NODE_CLASS_MAPPINGS["KSamplerSelect"]()
+SAMPLER = ksamplerselect.get_sampler(sampler_name="euler")
+
+# Initialize depth model
+cr_clip_input_switch = NODE_CLASS_MAPPINGS["CR Clip Input Switch"]()
+downloadandloaddepthanythingv2model = NODE_CLASS_MAPPINGS["DownloadAndLoadDepthAnythingV2Model"]()
+DEPTH_MODEL = downloadandloaddepthanythingv2model.loadmodel(
+    model="depth_anything_v2_vitl_fp32.safetensors"
+)
+cliptextencode = CLIPTextEncode()
+loadimage = LoadImage()
+vaeencode = VAEEncode()
+fluxguidance = NODE_CLASS_MAPPINGS["FluxGuidance"]()
+instructpixtopixconditioning = NODE_CLASS_MAPPINGS["InstructPixToPixConditioning"]()
+clipvisionencode = CLIPVisionEncode()
+stylemodelapplyadvanced = NODE_CLASS_MAPPINGS["StyleModelApplyAdvanced"]()
+emptylatentimage = EmptyLatentImage()
+basicguider = NODE_CLASS_MAPPINGS["BasicGuider"]()
+basicscheduler = NODE_CLASS_MAPPINGS["BasicScheduler"]()        
+randomnoise = NODE_CLASS_MAPPINGS["RandomNoise"]()
+samplercustomadvanced = NODE_CLASS_MAPPINGS["SamplerCustomAdvanced"]()
+vaedecode = VAEDecode()
+cr_text = NODE_CLASS_MAPPINGS["CR Text"]()
+saveimage = SaveImage()
+getimagesizeandcount = NODE_CLASS_MAPPINGS["GetImageSizeAndCount"]()
+depthanything_v2 = NODE_CLASS_MAPPINGS["DepthAnything_V2"]()
+imageresize = NODE_CLASS_MAPPINGS["ImageResize+"]()
+
+@spaces.GPU
 def generate_image(prompt: str, structure_image: str, depth_strength: float, style_image: str, style_strength: float, progress=gr.Progress(track_tqdm=True)) -> str:
     """Main generation function that processes inputs and returns the path to the generated image."""
-    
     with torch.inference_mode():
         # Set up CLIP
         clip_switch = cr_clip_input_switch.switch(
