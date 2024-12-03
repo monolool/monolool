@@ -13,8 +13,8 @@ hf_hub_download(repo_id="Comfy-Org/sigclip_vision_384", filename="sigclip_vision
 hf_hub_download(repo_id="Kijai/DepthAnythingV2-safetensors", filename="depth_anything_v2_vitl_fp32.safetensors", cache_dir="models/depthanything")
 hf_hub_download(repo_id="black-forest-labs/FLUX.1-dev", filename="ae.safetensors", cache_dir="models/vae/FLUX1")
 hf_hub_download(repo_id="comfyanonymous/flux_text_encoders", filename="clip_l.safetensors", cache_dir="models/text_encoders")
-hf_hub_download(repo_id="comfyanonymous/flux_text_encoders", filename="t5xxl_fp16.safetensors", cache_dir="models/text_encoders/t5")
-
+t5_path = hf_hub_download(repo_id="comfyanonymous/flux_text_encoders", filename="t5xxl_fp16.safetensors", cache_dir="models/text_encoders/t5")
+print(t5_path)
 # Import all the necessary functions from the original script
 def get_value_at_index(obj: Union[Sequence, Mapping], index: int) -> Any:
     try:
