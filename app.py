@@ -15,7 +15,7 @@ hf_hub_download(repo_id="Kijai/DepthAnythingV2-safetensors", filename="depth_any
 hf_hub_download(repo_id="black-forest-labs/FLUX.1-dev", filename="ae.safetensors", local_dir="models/vae/FLUX1")
 hf_hub_download(repo_id="comfyanonymous/flux_text_encoders", filename="clip_l.safetensors", local_dir="models/text_encoders")
 t5_path = hf_hub_download(repo_id="comfyanonymous/flux_text_encoders", filename="t5xxl_fp16.safetensors", local_dir="models/text_encoders/t5")
-print(t5_path)
+
 # Import all the necessary functions from the original script
 def get_value_at_index(obj: Union[Sequence, Mapping], index: int) -> Any:
     try:
@@ -291,7 +291,7 @@ def generate_image(prompt, structure_image, style_image, depth_strength=15, styl
 examples = [
     ["", "mona.png", "receita-tacos.webp", 15, 0.6],
     ["a woman looking at a house catching fire on the background", "disaster_girl.png", "abaporu.jpg", 15, 0.15],
-    ["istanbul aerial, dramatic photography", "natasha.png", "istambul.jpg", 15, 0.5],
+    #["istanbul aerial, dramatic photography", "natasha.png", "istambul.jpg", 15, 0.5],
 ]
 
 output_image = gr.Image(label="Generated Image")
