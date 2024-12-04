@@ -154,7 +154,7 @@ depthanything_v2 = NODE_CLASS_MAPPINGS["DepthAnything_V2"]()
 imageresize = NODE_CLASS_MAPPINGS["ImageResize+"]()
 
 @spaces.GPU
-def generate_image(prompt: str, structure_image: str, depth_strength: float, style_image: str, style_strength: float, progress=gr.Progress(track_tqdm=True)) -> str:
+def generate_image(prompt, structure_image, style_image, depth_strength=15, style_strength=0.5, progress=gr.Progress(track_tqdm=True)) -> str:
     """Main generation function that processes inputs and returns the path to the generated image."""
     with torch.inference_mode():
         # Set up CLIP
@@ -288,9 +288,16 @@ def generate_image(prompt: str, structure_image: str, depth_strength: float, sty
         return saved_path
 
 # Create Gradio interface
+
+examples = [
+    ["", "mona.png", "receita-tacos.webp"],
+    ["a woman looking at a house catching fire on the background", "disaster_girl.png", "abaporu.jpg"]
+    ["istanbul aerial, dramatic photography", "natasha.png", "istambul.png"],
+]
+
 with gr.Blocks() as app:
-    gr.Markdown("# Image Generation with Style Transfer")
-    
+    gr.Markdown("# FLUX Style Shaping")
+    gr.Markdown("## Flux[dev] Redux + Flux[dev] Depth ComfyUI workflow by [CitizenPlain](https://x.com/CitizenPlain) running directly on Gradio. [workflow](https://gist.github.com/nathanshipley/7a9ac1901adde76feebe58d558026f68) - [how to convert your comfy workflow to gradio (soon)](#)")
     with gr.Row():
         with gr.Column():
             prompt_input = gr.Textbox(label="Prompt", placeholder="Enter your prompt here...")
@@ -305,10 +312,16 @@ with gr.Blocks() as app:
         
         with gr.Column():
             output_image = gr.Image(label="Generated Image")
-    
+    gr.Examples(
+        examples=examples,
+        inputs=[prompt, structure_image, style_image],
+        outputs=[output_image]
+        fn=generate_image,
+        cache_examples="lazy"
+    )
     generate_btn.click(
         fn=generate_image,
-        inputs=[prompt_input, structure_image, depth_strength, style_image, style_strength],
+        inputs=[prompt_input, structure_image, style_image, depth_strength, style_strength],
         outputs=[output_image]
     )
 
