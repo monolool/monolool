@@ -290,14 +290,16 @@ def generate_image(prompt, structure_image, style_image, depth_strength=15, styl
 # Create Gradio interface
 
 examples = [
-    ["", "mona.png", "receita-tacos.webp"],
-    ["a woman looking at a house catching fire on the background", "disaster_girl.png", "abaporu.jpg"],
-    ["istanbul aerial, dramatic photography", "natasha.png", "istambul.jpg"],
+    ["", "mona.png", "receita-tacos.webp", 15, 0.6],
+    ["a woman looking at a house catching fire on the background", "disaster_girl.png", "abaporu.jpg", 15, 0.15],
+    ["istanbul aerial, dramatic photography", "natasha.png", "istambul.jpg", 15, 0.5],
 ]
+
+output_image = gr.Image(label="Generated Image")
 
 with gr.Blocks() as app:
     gr.Markdown("# FLUX Style Shaping")
-    gr.Markdown("## Flux[dev] Redux + Flux[dev] Depth ComfyUI workflow by [CitizenPlain](https://x.com/CitizenPlain) running directly on Gradio. [workflow](https://gist.github.com/nathanshipley/7a9ac1901adde76feebe58d558026f68) - [how to convert your any comfy workflow to gradio (soon)](#)")
+    gr.Markdown("Flux[dev] Redux + Flux[dev] Depth ComfyUI workflow by [Nathan Shipley](https://x.com/CitizenPlain) running directly on Gradio. [workflow](https://gist.github.com/nathanshipley/7a9ac1901adde76feebe58d558026f68) - [how to convert your any comfy workflow to gradio (soon)](#)")
     with gr.Row():
         with gr.Column():
             prompt_input = gr.Textbox(label="Prompt", placeholder="Enter your prompt here...")
@@ -309,16 +311,17 @@ with gr.Blocks() as app:
                     style_image = gr.Image(label="Style Image", type="filepath")
                     style_strength = gr.Slider(minimum=0, maximum=1, value=0.5, label="Style Strength")
             generate_btn = gr.Button("Generate")
+            
+            gr.Examples(
+                examples=examples,
+                inputs=[prompt_input, structure_image, style_image, depth_strength, style_strength],
+                outputs=[output_image],
+                fn=generate_image,
+                cache_examples="lazy"
+            )
         
         with gr.Column():
-            output_image = gr.Image(label="Generated Image")
-    gr.Examples(
-        examples=examples,
-        inputs=[prompt_input, structure_image, style_image],
-        outputs=[output_image],
-        fn=generate_image,
-        cache_examples="lazy"
-    )
+            output_image.render()
     generate_btn.click(
         fn=generate_image,
         inputs=[prompt_input, structure_image, style_image, depth_strength, style_strength],
