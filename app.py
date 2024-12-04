@@ -284,7 +284,6 @@ def generate_image(prompt, structure_image, style_image, depth_strength=15, styl
             images=get_value_at_index(decoded, 0),
         )
         saved_path = f"output/{saved['ui']['images'][0]['filename']}"
-        print(saved_path)
         return saved_path
 
 # Create Gradio interface
@@ -317,7 +316,8 @@ with gr.Blocks() as app:
                 inputs=[prompt_input, structure_image, style_image, depth_strength, style_strength],
                 outputs=[output_image],
                 fn=generate_image,
-                cache_examples=True
+                cache_examples=True,
+                cache_mode="lazy"
             )
         
         with gr.Column():
