@@ -291,8 +291,8 @@ def generate_image(prompt, structure_image, style_image, depth_strength=15, styl
 
 examples = [
     ["", "mona.png", "receita-tacos.webp"],
-    ["a woman looking at a house catching fire on the background", "disaster_girl.png", "abaporu.jpg"]
-    ["istanbul aerial, dramatic photography", "natasha.png", "istambul.png"],
+    ["a woman looking at a house catching fire on the background", "disaster_girl.png", "abaporu.jpg"],
+    ["istanbul aerial, dramatic photography", "natasha.png", "istambul.jpg"],
 ]
 
 with gr.Blocks() as app:
@@ -315,7 +315,7 @@ with gr.Blocks() as app:
     gr.Examples(
         examples=examples,
         inputs=[prompt, structure_image, style_image],
-        outputs=[output_image]
+        outputs=[output_image],
         fn=generate_image,
         cache_examples="lazy"
     )
