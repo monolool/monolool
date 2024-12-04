@@ -1,5 +1,5 @@
 ---
-title: Flux Illusion Diffusion
+title: Flux Style Shaping
 emoji: 🚀
 colorFrom: indigo
 colorTo: gray
