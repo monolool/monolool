@@ -297,7 +297,7 @@ examples = [
 
 with gr.Blocks() as app:
     gr.Markdown("# FLUX Style Shaping")
-    gr.Markdown("## Flux[dev] Redux + Flux[dev] Depth ComfyUI workflow by [CitizenPlain](https://x.com/CitizenPlain) running directly on Gradio. [workflow](https://gist.github.com/nathanshipley/7a9ac1901adde76feebe58d558026f68) - [how to convert your comfy workflow to gradio (soon)](#)")
+    gr.Markdown("## Flux[dev] Redux + Flux[dev] Depth ComfyUI workflow by [CitizenPlain](https://x.com/CitizenPlain) running directly on Gradio. [workflow](https://gist.github.com/nathanshipley/7a9ac1901adde76feebe58d558026f68) - [how to convert your any comfy workflow to gradio (soon)](#)")
     with gr.Row():
         with gr.Column():
             prompt_input = gr.Textbox(label="Prompt", placeholder="Enter your prompt here...")
@@ -314,7 +314,7 @@ with gr.Blocks() as app:
             output_image = gr.Image(label="Generated Image")
     gr.Examples(
         examples=examples,
-        inputs=[prompt, structure_image, style_image],
+        inputs=[prompt_input, structure_image, style_image],
         outputs=[output_image],
         fn=generate_image,
         cache_examples="lazy"
