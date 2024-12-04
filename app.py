@@ -317,8 +317,7 @@ with gr.Blocks() as app:
                 inputs=[prompt_input, structure_image, style_image, depth_strength, style_strength],
                 outputs=[output_image],
                 fn=generate_image,
-                cache_examples=True,
-                cache_mode="eager"
+                cache_examples=True
             )
         
         with gr.Column():
