@@ -4,7 +4,7 @@ emoji: 🚀
 colorFrom: indigo
 colorTo: gray
 sdk: gradio
-sdk_version: 5.5.0
+sdk_version: 5.8.0
 app_file: app.py
 pinned: false
 license: mit
@@ -316,4 +316,3 @@ This will use a snapshot of the legacy frontend preserved in the [ComfyUI Legacy
 ### Which GPU should I buy for this?
 
 [See this page for some recommendations](https://github.com/comfyanonymous/ComfyUI/wiki/Which-GPU-should-I-buy-for-ComfyUI)
-
