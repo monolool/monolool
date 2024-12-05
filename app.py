@@ -291,7 +291,7 @@ def generate_image(prompt, structure_image, style_image, depth_strength=15, styl
 examples = [
     ["", "mona.png", "receita-tacos.webp", 15, 0.6],
     ["a woman looking at a house catching fire on the background", "disaster_girl.png", "abaporu.jpg", 15, 0.15],
-    #["istanbul aerial, dramatic photography", "natasha.png", "istambul.jpg", 15, 0.5],
+    ["istanbul aerial, dramatic photography", "natasha.png", "istambul.jpg", 15, 0.5],
 ]
 
 output_image = gr.Image(label="Generated Image")
