@@ -155,7 +155,7 @@ getimagesizeandcount = NODE_CLASS_MAPPINGS["GetImageSizeAndCount"]()
 depthanything_v2 = NODE_CLASS_MAPPINGS["DepthAnything_V2"]()
 imageresize = NODE_CLASS_MAPPINGS["ImageResize+"]()
 
-model_loaders = [CLIP_MODEL, VAE_MODEL, UNET_MODEL, CLIP_VISION_MODEL, DEPTH_MODEL, STYLE_MODEL]
+model_loaders = [CLIP_MODEL, VAE_MODEL, UNET_MODEL, CLIP_VISION_MODEL]
 
 model_management.load_models_gpu([
     loader[0].patcher if hasattr(loader[0], 'patcher') else loader[0] for loader in model_loaders
