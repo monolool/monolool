@@ -136,13 +136,6 @@ DEPTH_MODEL = downloadandloaddepthanythingv2model.loadmodel(
     model="depth_anything_v2_vitl_fp32.safetensors"
 )
 
-model_management.load_models_gpu([
-    CLIP_MODEL[0].patcher,
-    VAE_MODEL[0].patcher,
-    UNET_MODEL[0].patcher,
-    CLIP_VISION_MODEL[0].patcher,
-])
-
 cliptextencode = CLIPTextEncode()
 loadimage = LoadImage()
 vaeencode = VAEEncode()
@@ -161,6 +154,13 @@ saveimage = SaveImage()
 getimagesizeandcount = NODE_CLASS_MAPPINGS["GetImageSizeAndCount"]()
 depthanything_v2 = NODE_CLASS_MAPPINGS["DepthAnything_V2"]()
 imageresize = NODE_CLASS_MAPPINGS["ImageResize+"]()
+
+model_management.load_models_gpu([
+    CLIP_MODEL[0].patcher,
+    VAE_MODEL[0].patcher,
+    UNET_MODEL[0],
+    CLIP_VISION_MODEL[0].patcher,
+])
 
 @spaces.GPU
 def generate_image(prompt, structure_image, style_image, depth_strength=15, style_strength=0.5, progress=gr.Progress(track_tqdm=True)) -> str:
