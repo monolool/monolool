@@ -139,7 +139,7 @@ DEPTH_MODEL = downloadandloaddepthanythingv2model.loadmodel(
 model_management.load_models_gpu([
     CLIP_MODEL[0].patcher,
     VAE_MODEL[0].patcher,
-    UNET_MODEL[0],
+    UNET_MODEL[0].patcher,
     CLIP_VISION_MODEL[0].patcher,
 ])
 
