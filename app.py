@@ -7,6 +7,7 @@ import gradio as gr
 from PIL import Image
 from huggingface_hub import hf_hub_download
 import spaces
+from comfy import model_management
 
 hf_hub_download(repo_id="black-forest-labs/FLUX.1-Redux-dev", filename="flux1-redux-dev.safetensors", local_dir="models/style_models")
 hf_hub_download(repo_id="black-forest-labs/FLUX.1-Depth-dev", filename="flux1-depth-dev.safetensors", local_dir="models/diffusion_models")
@@ -134,6 +135,14 @@ downloadandloaddepthanythingv2model = NODE_CLASS_MAPPINGS["DownloadAndLoadDepthA
 DEPTH_MODEL = downloadandloaddepthanythingv2model.loadmodel(
     model="depth_anything_v2_vitl_fp32.safetensors"
 )
+
+model_management.load_models_gpu([
+    CLIP_MODEL[0].patcher,
+    VAE_MODEL[0].patcher,
+    UNET_MODEL[0],
+    CLIP_VISION_MODEL[0].patcher,
+])
+
 cliptextencode = CLIPTextEncode()
 loadimage = LoadImage()
 vaeencode = VAEEncode()
