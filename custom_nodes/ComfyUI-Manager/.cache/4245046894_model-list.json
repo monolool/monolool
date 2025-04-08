@@ -210,28 +210,6 @@
             "url": "https://huggingface.co/stabilityai/stable-diffusion-x4-upscaler/resolve/main/x4-upscaler-ema.safetensors"
         },
         {
-            "base": "inswapper",
-            "description": "Checkpoint of the insightface swapper model\n(used by ComfyUI-FaceSwap, comfyui-reactor-node, CharacterFaceSwap,\nComfyUI roop and comfy_mtb)",
-            "filename": "inswapper_128_fp16.onnx",
-            "name": "Inswapper-fp16 (face swap)",
-            "reference": "https://github.com/facefusion/facefusion-assets",
-            "save_path": "insightface",
-            "size": "277.7MB",
-            "type": "insightface",
-            "url": "https://github.com/facefusion/facefusion-assets/releases/download/models/inswapper_128_fp16.onnx"
-        },
-        {
-            "base": "inswapper",
-            "description": "Checkpoint of the insightface swapper model\n(used by ComfyUI-FaceSwap, comfyui-reactor-node, CharacterFaceSwap,\nComfyUI roop and comfy_mtb)",
-            "filename": "inswapper_128.onnx",
-            "name": "Inswapper (face swap)",
-            "reference": "https://github.com/facefusion/facefusion-assets",
-            "save_path": "insightface",
-            "size": "555.3MB",
-            "type": "insightface",
-            "url": "https://github.com/facefusion/facefusion-assets/releases/download/models/inswapper_128.onnx"
-        },
-        {
             "base": "deepbump",
             "description": "Checkpoint of the deepbump model to generate height and normal maps textures from an image (requires comfy_mtb)",
             "filename": "deepbump256.onnx",
@@ -316,7 +294,7 @@
             "reference": "https://civitai.com/models/56519/negativehand-negative-embedding",
             "save_path": "embeddings/SD1.5",
             "size": "25KB",
-            "type": "embeddings",
+            "type": "embedding",
             "url": "https://civitai.com/api/download/models/60938"
         },
         {
@@ -327,7 +305,7 @@
             "reference": "https://civitai.com/models/55700/badprompt-negative-embedding",
             "save_path": "embeddings/SD1.5",
             "size": "25KB",
-            "type": "embeddings",
+            "type": "embedding",
             "url": "https://civitai.com/api/download/models/60095"
         },
         {
@@ -338,7 +316,7 @@
             "reference": "https://civitai.com/models/4629/deep-negative-v1x",
             "save_path": "embeddings/SD1.5",
             "size": "226KB",
-            "type": "embeddings",
+            "type": "embedding",
             "url": "https://civitai.com/api/download/models/5637"
         },
         {
@@ -349,7 +327,7 @@
             "reference": "https://civitai.com/models/7808/easynegative",
             "save_path": "embeddings/SD1.5",
             "size": "25KB",
-            "type": "embeddings",
+            "type": "embedding",
             "url": "https://civitai.com/api/download/models/9208"
         },
         {
@@ -490,7 +468,7 @@
             "filename": "model.safetensors",
             "name": "stabilityai/Stable Cascade: text_encoder (CLIP)",
             "reference": "https://huggingface.co/stabilityai/stable-cascade",
-            "save_path": "clip/Stable-Cascade",
+            "save_path": "text_encoders/Stable-Cascade",
             "size": "1.39GB",
             "type": "clip",
             "url": "https://huggingface.co/stabilityai/stable-cascade/resolve/main/text_encoder/model.safetensors"
@@ -870,12 +848,67 @@
             "url": "https://huggingface.co/comfyanonymous/flux_text_encoders/resolve/main/t5xxl_fp8_e4m3fn_scaled.safetensors"
         },
         {
+            "base": "Cosmos-1.0",
+            "description": "VAE model for Cosmos 1.0",
+            "filename": "cosmos_cv8x8x8_1.0.safetensors",
+            "name": "comfyanonymous/cosmos_cv8x8x8_1.0.safetensors",
+            "reference": "https://huggingface.co/comfyanonymous/cosmos_1.0_text_encoder_and_VAE_ComfyUI/tree/main",
+            "save_path": "default",
+            "size": "211MB",
+            "type": "VAE",
+            "url": "https://huggingface.co/comfyanonymous/cosmos_1.0_text_encoder_and_VAE_ComfyUI/resolve/main/vae/cosmos_cv8x8x8_1.0.safetensors"
+        },
+        {
+            "base": "Cosmos-1.0",
+            "description": "Cosmos 1.0 Text2World Diffusion Model (7B)",
+            "filename": "Cosmos-1_0-Diffusion-7B-Text2World.safetensors",
+            "name": "mcmonkey/Cosmos-1_0-Diffusion-7B-Text2World.safetensors",
+            "reference": "https://huggingface.co/mcmonkey/cosmos-1.0",
+            "save_path": "diffusion_models/cosmos-1.0",
+            "size": "14.5GB",
+            "type": "diffusion_model",
+            "url": "https://huggingface.co/mcmonkey/cosmos-1.0/resolve/main/Cosmos-1_0-Diffusion-7B-Text2World.safetensors"
+        },
+        {
+            "base": "Cosmos-1.0",
+            "description": "Cosmos 1.0 Video2World Diffusion Model (7B)",
+            "filename": "Cosmos-1_0-Diffusion-7B-Video2World.safetensors",
+            "name": "mcmonkey/Cosmos-1_0-Diffusion-7B-Video2World.safetensors",
+            "reference": "https://huggingface.co/mcmonkey/cosmos-1.0",
+            "save_path": "diffusion_models/cosmos-1.0",
+            "size": "14.5GB",
+            "type": "diffusion_model",
+            "url": "https://huggingface.co/mcmonkey/cosmos-1.0/resolve/main/Cosmos-1_0-Diffusion-7B-Video2World.safetensors"
+        },
+        {
+            "base": "Cosmos-1.0",
+            "description": "Cosmos 1.0 Text2World Diffusion Model (14B)",
+            "filename": "Cosmos-1_0-Diffusion-14B-Text2World.safetensors",
+            "name": "mcmonkey/Cosmos-1_0-Diffusion-14B-Text2World.safetensors",
+            "reference": "https://huggingface.co/mcmonkey/cosmos-1.0",
+            "save_path": "diffusion_models/cosmos-1.0",
+            "size": "28.5GB",
+            "type": "diffusion_model",
+            "url": "https://huggingface.co/mcmonkey/cosmos-1.0/resolve/main/Cosmos-1_0-Diffusion-14B-Text2World.safetensors"
+        },
+        {
+            "base": "Cosmos-1.0",
+            "description": "Cosmos 1.0 Video2World Diffusion Model (14B)",
+            "filename": "Cosmos-1_0-Diffusion-14B-Video2World.safetensors",
+            "name": "mcmonkey/Cosmos-1_0-Diffusion-14B-Video2World.safetensors",
+            "reference": "https://huggingface.co/mcmonkey/cosmos-1.0",
+            "save_path": "diffusion_models/cosmos-1.0",
+            "size": "28.5GB",
+            "type": "diffusion_model",
+            "url": "https://huggingface.co/mcmonkey/cosmos-1.0/resolve/main/Cosmos-1_0-Diffusion-14B-Video2World.safetensors"
+        },
+        {
             "base": "t5-base",
             "description": "T5 Base: Text-To-Text Transfer Transformer. This model can be loaded via CLIPLoader for Stable Audio workflow.",
             "filename": "model.safetensors",
             "name": "google-t5/t5-base",
             "reference": "https://huggingface.co/google-t5/t5-base",
-            "save_path": "clip/t5-base",
+            "save_path": "text_encoders/t5-base",
             "size": "892MB",
             "type": "clip",
             "url": "https://huggingface.co/google-t5/t5-base/resolve/main/model.safetensors"
@@ -886,7 +919,7 @@
             "filename": "google_t5-v1_1-xxl_encoderonly-fp16.safetensors",
             "name": "google-t5/t5-v1_1-xxl_encoderonly-fp16",
             "reference": "https://huggingface.co/mcmonkey/google_t5-v1_1-xxl_encoderonly",
-            "save_path": "clip/t5",
+            "save_path": "text_encoders/t5",
             "size": "10.1GB",
             "type": "clip",
             "url": "https://huggingface.co/mcmonkey/google_t5-v1_1-xxl_encoderonly/resolve/main/model.safetensors"
@@ -897,7 +930,7 @@
             "filename": "google_t5-v1_1-xxl_encoderonly-fp8_e4m3fn.safetensors",
             "name": "google-t5/t5-v1_1-xxl_encoderonly-fp8_e4m3fn",
             "reference": "https://huggingface.co/mcmonkey/google_t5-v1_1-xxl_encoderonly",
-            "save_path": "clip/t5",
+            "save_path": "text_encoders/t5",
             "size": "4.89GB",
             "type": "clip",
             "url": "https://huggingface.co/mcmonkey/google_t5-v1_1-xxl_encoderonly/resolve/main/t5xxl_fp8_e4m3fn.safetensors"
@@ -908,7 +941,7 @@
             "filename": "t5-v1_1-xxl-encoder-Q3_K_L.gguf",
             "name": "city96/t5-v1_1-xxl-encoder-Q3_K_L.gguf",
             "reference": "https://huggingface.co/city96/t5-v1_1-xxl-encoder-gguf",
-            "save_path": "clip/t5",
+            "save_path": "text_encoders/t5",
             "size": "2.46GB",
             "type": "clip",
             "url": "https://huggingface.co/city96/t5-v1_1-xxl-encoder-gguf/resolve/main/t5-v1_1-xxl-encoder-Q3_K_L.gguf"
@@ -919,7 +952,7 @@
             "filename": "t5-v1_1-xxl-encoder-Q3_K_M.gguf",
             "name": "city96/t5-v1_1-xxl-encoder-Q3_K_M.gguf",
             "reference": "https://huggingface.co/city96/t5-v1_1-xxl-encoder-gguf",
-            "save_path": "clip/t5",
+            "save_path": "text_encoders/t5",
             "size": "2.3GB",
             "type": "clip",
             "url": "https://huggingface.co/city96/t5-v1_1-xxl-encoder-gguf/resolve/main/t5-v1_1-xxl-encoder-Q3_K_M.gguf"
@@ -930,7 +963,7 @@
             "filename": "t5-v1_1-xxl-encoder-Q3_K_S.gguf",
             "name": "city96/t5-v1_1-xxl-encoder-Q3_K_S.gguf",
             "reference": "https://huggingface.co/city96/t5-v1_1-xxl-encoder-gguf",
-            "save_path": "clip/t5",
+            "save_path": "text_encoders/t5",
             "size": "2.1GB",
             "type": "clip",
             "url": "https://huggingface.co/city96/t5-v1_1-xxl-encoder-gguf/resolve/main/t5-v1_1-xxl-encoder-Q3_K_S.gguf"
@@ -941,7 +974,7 @@
             "filename": "t5-v1_1-xxl-encoder-Q4_K_M.gguf",
             "name": "city96/t5-v1_1-xxl-encoder-Q4_K_M.gguf",
             "reference": "https://huggingface.co/city96/t5-v1_1-xxl-encoder-gguf",
-            "save_path": "clip/t5",
+            "save_path": "text_encoders/t5",
             "size": "2.9GB",
             "type": "clip",
             "url": "https://huggingface.co/city96/t5-v1_1-xxl-encoder-gguf/resolve/main/t5-v1_1-xxl-encoder-Q4_K_M.gguf"
@@ -952,7 +985,7 @@
             "filename": "t5-v1_1-xxl-encoder-Q4_K_S.gguf",
             "name": "city96/t5-v1_1-xxl-encoder-Q4_K_S.gguf",
             "reference": "https://huggingface.co/city96/t5-v1_1-xxl-encoder-gguf",
-            "save_path": "clip/t5",
+            "save_path": "text_encoders/t5",
             "size": "2.74GB",
             "type": "clip",
             "url": "https://huggingface.co/city96/t5-v1_1-xxl-encoder-gguf/resolve/main/t5-v1_1-xxl-encoder-Q4_K_S.gguf"
@@ -963,7 +996,7 @@
             "filename": "t5-v1_1-xxl-encoder-Q5_K_M.gguf",
             "name": "city96/t5-v1_1-xxl-encoder-Q5_K_M.gguf",
             "reference": "https://huggingface.co/city96/t5-v1_1-xxl-encoder-gguf",
-            "save_path": "clip/t5",
+            "save_path": "text_encoders/t5",
             "size": "3.39GB",
             "type": "clip",
             "url": "https://huggingface.co/city96/t5-v1_1-xxl-encoder-gguf/resolve/main/t5-v1_1-xxl-encoder-Q5_K_M.gguf"
@@ -974,7 +1007,7 @@
             "filename": "t5-v1_1-xxl-encoder-Q5_K_S.gguf",
             "name": "city96/t5-v1_1-xxl-encoder-Q5_K_S.gguf",
             "reference": "https://huggingface.co/city96/t5-v1_1-xxl-encoder-gguf",
-            "save_path": "clip/t5",
+            "save_path": "text_encoders/t5",
             "size": "3.29GB",
             "type": "clip",
             "url": "https://huggingface.co/city96/t5-v1_1-xxl-encoder-gguf/resolve/main/t5-v1_1-xxl-encoder-Q5_K_S.gguf"
@@ -985,7 +1018,7 @@
             "filename": "t5-v1_1-xxl-encoder-Q6_K.gguf",
             "name": "city96/t5-v1_1-xxl-encoder-Q6_K.gguf",
             "reference": "https://huggingface.co/city96/t5-v1_1-xxl-encoder-gguf",
-            "save_path": "clip/t5",
+            "save_path": "text_encoders/t5",
             "size": "3.91GB",
             "type": "clip",
             "url": "https://huggingface.co/city96/t5-v1_1-xxl-encoder-gguf/resolve/main/t5-v1_1-xxl-encoder-Q6_K.gguf"
@@ -996,7 +1029,7 @@
             "filename": "t5-v1_1-xxl-encoder-Q8_0.gguf",
             "name": "city96/t5-v1_1-xxl-encoder-Q8_0.gguf",
             "reference": "https://huggingface.co/city96/t5-v1_1-xxl-encoder-gguf",
-            "save_path": "clip/t5",
+            "save_path": "text_encoders/t5",
             "size": "5.06GB",
             "type": "clip",
             "url": "https://huggingface.co/city96/t5-v1_1-xxl-encoder-gguf/resolve/main/t5-v1_1-xxl-encoder-Q8_0.gguf"
@@ -1007,7 +1040,7 @@
             "filename": "t5-v1_1-xxl-encoder-f16.gguf",
             "name": "city96/t5-v1_1-xxl-encoder-f16.gguf",
             "reference": "https://huggingface.co/city96/t5-v1_1-xxl-encoder-gguf",
-            "save_path": "clip/t5",
+            "save_path": "text_encoders/t5",
             "size": "9.53GB",
             "type": "clip",
             "url": "https://huggingface.co/city96/t5-v1_1-xxl-encoder-gguf/resolve/main/t5-v1_1-xxl-encoder-f16.gguf"
@@ -1018,21 +1051,32 @@
             "filename": "t5-v1_1-xxl-encoder-f32.gguf",
             "name": "city96/t5-v1_1-xxl-encoder-f32.gguf",
             "reference": "https://huggingface.co/city96/t5-v1_1-xxl-encoder-gguf",
-            "save_path": "clip/t5",
+            "save_path": "text_encoders/t5",
             "size": "19.1GB",
             "type": "clip",
             "url": "https://huggingface.co/city96/t5-v1_1-xxl-encoder-gguf/resolve/main/t5-v1_1-xxl-encoder-f32.gguf"
         },
         {
             "base": "clip",
-            "description": "clip_l model",
+            "description": "clip_l model (for SD1.x, SD2.x, SDXL, SD3.5, FLUX.1, HunyuanVideo, ...) ",
             "filename": "clip_l.safetensors",
-            "name": "comfyanonymous/clip_l",
-            "reference": "https://huggingface.co/comfyanonymous/flux_text_encoders/tree/main",
+            "name": "Comfy-Org/clip_l",
+            "reference": "https://huggingface.co/Comfy-Org/stable-diffusion-3.5-fp8",
             "save_path": "default",
             "size": "246MB",
             "type": "clip",
-            "url": "https://huggingface.co/comfyanonymous/flux_text_encoders/resolve/main/clip_l.safetensors"
+            "url": "https://huggingface.co/Comfy-Org/stable-diffusion-3.5-fp8/resolve/main/text_encoders/clip_l.safetensors"
+        },
+        {
+            "base": "clip",
+            "description": "clip_g model (for SDXL, SD3.5)",
+            "filename": "clip_g.safetensors",
+            "name": "Comfy-Org/clip_g",
+            "reference": "https://huggingface.co/Comfy-Org/stable-diffusion-3.5-fp8",
+            "save_path": "default",
+            "size": "1.39GB",
+            "type": "clip",
+            "url": "https://huggingface.co/Comfy-Org/stable-diffusion-3.5-fp8/resolve/main/text_encoders/clip_g.safetensors"
         },
         {
             "base": "SD1.5",
@@ -1652,17 +1696,6 @@
         },
         {
             "base": "SDXL",
-            "description": "An extremely compactly designed controlnet model (a.k.a. ControlNet-LLLite). Note: The model structure is highly experimental and may be subject to change in the future.",
-            "filename": "controllllite_v01032064e_sdxl_canny_anime.safetensors",
-            "name": "kohya-ss/ControlNet-LLLite: SDXL Canny Anime",
-            "reference": "https://huggingface.co/kohya-ss/controlnet-lllite",
-            "save_path": "custom_nodes/ControlNet-LLLite-ComfyUI/models",
-            "size": "46.2MB",
-            "type": "controlnet",
-            "url": "https://huggingface.co/kohya-ss/controlnet-lllite/resolve/main/controllllite_v01032064e_sdxl_canny_anime.safetensors"
-        },
-        {
-            "base": "SDXL",
             "description": "ControlNet openpose model for SDXL",
             "filename": "OpenPoseXL2.safetensors",
             "name": "SDXL-controlnet: OpenPose (v2)",
@@ -2246,6 +2279,17 @@
         },
         {
             "base": "SD1.x",
+            "description": "AnimateDiff-PIA Model",
+            "filename": "pia.ckpt",
+            "name": "Leoxing/pia.ckpt",
+            "reference": "https://huggingface.co/Leoxing/PIA/tree/main",
+            "save_path": "animatediff_models",
+            "size": "1.67GB",
+            "type": "animatediff-pia",
+            "url": "https://huggingface.co/Leoxing/PIA/resolve/main/pia.ckpt"
+        },
+        {
+            "base": "SD1.x",
             "description": "Pressing 'install' directly downloads the model from the Kosinkadink/ComfyUI-AnimateDiff-Evolved extension node.",
             "filename": "v2_lora_PanLeft.ckpt",
             "name": "animatediff/v2_lora_PanLeft.ckpt (ComfyUI-AnimateDiff-Evolved) (Updated path)",
@@ -2729,39 +2773,6 @@
             "url": "https://huggingface.co/Kwai-Kolors/Kolors-IP-Adapter-FaceID-Plus/resolve/main/ipa-faceid-plus.bin"
         },
         {
-            "base": "SD1.5",
-            "description": "Pressing 'install' directly downloads the model from the pfg-ComfyUI/models extension node. (Note: Requires ComfyUI-Manager V0.24 or above)",
-            "filename": "pfg-novel-n10.pt",
-            "name": "pfg-novel-n10.pt",
-            "reference": "https://huggingface.co/furusu/PFG",
-            "save_path": "custom_nodes/pfg-ComfyUI/models",
-            "size": "23.6MB",
-            "type": "PFG",
-            "url": "https://huggingface.co/furusu/PFG/resolve/main/pfg-novel-n10.pt"
-        },
-        {
-            "base": "SD1.5",
-            "description": "Pressing 'install' directly downloads the model from the pfg-ComfyUI/models extension node. (Note: Requires ComfyUI-Manager V0.24 or above)",
-            "filename": "pfg-wd14-n10.pt",
-            "name": "pfg-wd14-n10.pt",
-            "reference": "https://huggingface.co/furusu/PFG",
-            "save_path": "custom_nodes/pfg-ComfyUI/models",
-            "size": "31.5MB",
-            "type": "PFG",
-            "url": "https://huggingface.co/furusu/PFG/resolve/main/pfg-wd14-n10.pt"
-        },
-        {
-            "base": "SD1.5",
-            "description": "Pressing 'install' directly downloads the model from the pfg-ComfyUI/models extension node. (Note: Requires ComfyUI-Manager V0.24 or above)",
-            "filename": "pfg-wd15beta2-n10.pt",
-            "name": "pfg-wd15beta2-n10.pt",
-            "reference": "https://huggingface.co/furusu/PFG",
-            "save_path": "custom_nodes/pfg-ComfyUI/models",
-            "size": "31.5MB",
-            "type": "PFG",
-            "url": "https://huggingface.co/furusu/PFG/resolve/main/pfg-wd15beta2-n10.pt"
-        },
-        {
             "base": "GFPGAN",
             "description": "Face Restoration Models. Download the model required for using the 'Facerestore CF (Code Former)' custom node.",
             "filename": "GFPGANv1.4.pth",
@@ -2925,50 +2936,6 @@
             "size": "2.50GB",
             "type": "controlnet",
             "url": "https://huggingface.co/InstantX/InstantID/resolve/main/ControlNetModel/diffusion_pytorch_model.safetensors"
-        },
-        {
-            "base": "efficient_sam",
-            "description": "Install efficient_sam_s_cpu.jit into ComfyUI-YoloWorld-EfficientSAM",
-            "filename": "efficient_sam_s_cpu.jit",
-            "name": "efficient_sam_s_cpu.jit [ComfyUI-YoloWorld-EfficientSAM]",
-            "reference": "https://huggingface.co/camenduru/YoloWorld-EfficientSAM/tree/main",
-            "save_path": "custom_nodes/ComfyUI-YoloWorld-EfficientSAM",
-            "size": "106.0MB",
-            "type": "efficient_sam",
-            "url": "https://huggingface.co/camenduru/YoloWorld-EfficientSAM/resolve/main/efficient_sam_s_cpu.jit"
-        },
-        {
-            "base": "efficient_sam",
-            "description": "Install efficient_sam_s_gpu.jit into ComfyUI-YoloWorld-EfficientSAM",
-            "filename": "efficient_sam_s_gpu.jit",
-            "name": "efficient_sam_s_gpu.jit [ComfyUI-YoloWorld-EfficientSAM]",
-            "reference": "https://huggingface.co/camenduru/YoloWorld-EfficientSAM/tree/main",
-            "save_path": "custom_nodes/ComfyUI-YoloWorld-EfficientSAM",
-            "size": "106.0MB",
-            "type": "efficient_sam",
-            "url": "https://huggingface.co/camenduru/YoloWorld-EfficientSAM/resolve/main/efficient_sam_s_gpu.jit"
-        },
-        {
-            "base": "DLIB",
-            "description": "To use the Face Analysis for ComfyUI custom node, installation of this model is needed.",
-            "filename": "shape_predictor_68_face_landmarks.dat",
-            "name": "shape_predictor_68_face_landmarks.dat [Face Analysis]",
-            "reference": "https://huggingface.co/matt3ounstable/dlib_predictor_recognition/tree/main",
-            "save_path": "custom_nodes/ComfyUI_FaceAnalysis/dlib",
-            "size": "99.7MB",
-            "type": "Shape Predictor",
-            "url": "https://huggingface.co/matt3ounstable/dlib_predictor_recognition/resolve/main/shape_predictor_68_face_landmarks.dat"
-        },
-        {
-            "base": "DLIB",
-            "description": "To use the Face Analysis for ComfyUI custom node, installation of this model is needed.",
-            "filename": "dlib_face_recognition_resnet_model_v1.dat",
-            "name": "dlib_face_recognition_resnet_model_v1.dat [Face Analysis]",
-            "reference": "https://huggingface.co/matt3ounstable/dlib_predictor_recognition/tree/main",
-            "save_path": "custom_nodes/ComfyUI_FaceAnalysis/dlib",
-            "size": "22.5MB",
-            "type": "Face Recognition",
-            "url": "https://huggingface.co/matt3ounstable/dlib_predictor_recognition/resolve/main/dlib_face_recognition_resnet_model_v1.dat"
         },
         {
             "base": "SD1.5",
@@ -3345,50 +3312,6 @@
             "url": "https://huggingface.co/lllyasviel/ic-light/resolve/main/iclight_sd15_fcon.safetensors"
         },
         {
-            "base": "SD1.5",
-            "description": "ID-Animator checkpoint",
-            "filename": "animator.ckpt",
-            "name": "ID-Animator/animator.ckpt",
-            "reference": "https://huggingface.co/spaces/ID-Animator/ID-Animator",
-            "save_path": "custom_nodes/ComfyUI_ID_Animator/models",
-            "size": "247.3MB",
-            "type": "ID-Animator",
-            "url": "https://huggingface.co/spaces/ID-Animator/ID-Animator/resolve/main/animator.ckpt"
-        },
-        {
-            "base": "SD1.5",
-            "description": "AnimateDiff checkpoint for ID-Animator",
-            "filename": "mm_sd_v15_v2.ckpt",
-            "name": "ID-Animator/mm_sd_v15_v2.ckpt",
-            "reference": "https://huggingface.co/spaces/ID-Animator/ID-Animator",
-            "save_path": "custom_nodes/ComfyUI_ID_Animator/models/animatediff_models",
-            "size": "1.82GB",
-            "type": "ID-Animator",
-            "url": "https://huggingface.co/spaces/ID-Animator/ID-Animator/resolve/main/mm_sd_v15_v2.ckpt"
-        },
-        {
-            "base": "SD1.5",
-            "description": "CLIP Image encoder for ID-Animator",
-            "filename": "model.safetensors",
-            "name": "ID-Animator/image_encoder",
-            "reference": "https://huggingface.co/spaces/ID-Animator/ID-Animator",
-            "save_path": "custom_nodes/ComfyUI_ID_Animator/models/image_encoder",
-            "size": "2.53GB",
-            "type": "ID-Animator",
-            "url": "https://huggingface.co/spaces/ID-Animator/ID-Animator/resolve/main/image_encoder/model.safetensors"
-        },
-        {
-            "base": "CustomNet",
-            "description": "CustomNet pretrained model for ComfyUI_CustomNet",
-            "filename": "customnet_v1.pt",
-            "name": "TencentARC/CustomNet",
-            "reference": "https://huggingface.co/TencentARC/CustomNet/tree/main",
-            "save_path": "custom_nodes/ComfyUI_CustomNet/pretrain",
-            "size": "5.71GB",
-            "type": "CustomNet",
-            "url": "https://huggingface.co/TencentARC/CustomNet/resolve/main/customnet_v1.pt"
-        },
-        {
             "base": "SDXL",
             "description": "Controlnet SDXL Tile model realistic version.",
             "filename": "TTPLANET_Controlnet_Tile_realistic_v2_fp16.safetensors",
@@ -3475,17 +3398,6 @@
             "size": "136.0MB",
             "type": "RGT",
             "url": "https://huggingface.co/ViperYX/RGT/resolve/main/RGT_S/RGT_S_x4.pth"
-        },
-        {
-            "base": "ToonCrafter",
-            "description": "ToonCrafter checkpoint model for ComfyUI-ToonCrafter",
-            "filename": "model.ckpt",
-            "name": "Doubiiu/ToonCrafter model checkpoint",
-            "reference": "https://huggingface.co/Doubiiu/ToonCrafter/tree/main",
-            "save_path": "custom_nodes/ComfyUI-ToonCrafter/ToonCrafter/checkpoints/tooncrafter_512_interp_v1",
-            "size": "10.5GB",
-            "type": "checkpoint",
-            "url": "https://huggingface.co/Doubiiu/ToonCrafter/resolve/main/model.ckpt"
         },
         {
             "base": "FLUX.1",
@@ -3920,12 +3832,45 @@
             "base": "pixart-sigma",
             "description": "PixArt-Sigma Checkpoint model",
             "filename": "PixArt-Sigma-XL-2-1024-MS.pth",
-            "name": "PixArt-Sigma-XL-2-1024-MS.pth",
+            "name": "PixArt-Sigma-XL-2-1024-MS.pth (checkpoint)",
             "reference": "https://huggingface.co/PixArt-alpha/PixArt-Sigma/tree/main",
             "save_path": "checkpoints/PixArt-Sigma",
             "size": "2.47GB",
             "type": "checkpoint",
             "url": "https://huggingface.co/PixArt-alpha/PixArt-Sigma/resolve/main/PixArt-Sigma-XL-2-1024-MS.pth"
+        },
+        {
+            "base": "pixart-sigma",
+            "description": "PixArt-Sigma Diffusion model",
+            "filename": "PixArt-Sigma-XL-2-512-MS.safetensors",
+            "name": "PixArt-Sigma-XL-2-512-MS.safetensors (diffusion)",
+            "reference": "https://huggingface.co/PixArt-alpha/PixArt-Sigma-XL-2-512-MS",
+            "save_path": "diffusion_models/PixArt-Sigma",
+            "size": "2.44GB",
+            "type": "diffusion_model",
+            "url": "https://huggingface.co/PixArt-alpha/PixArt-Sigma-XL-2-512-MS/resolve/main/transformer/diffusion_pytorch_model.safetensors"
+        },
+        {
+            "base": "pixart-sigma",
+            "description": "PixArt-Sigma Diffusion model",
+            "filename": "PixArt-Sigma-XL-2-1024-MS.safetensors",
+            "name": "PixArt-Sigma-XL-2-1024-MS.safetensors (diffusion)",
+            "reference": "https://huggingface.co/PixArt-alpha/PixArt-Sigma-XL-2-1024-MS",
+            "save_path": "diffusion_models/PixArt-Sigma",
+            "size": "2.44GB",
+            "type": "diffusion_model",
+            "url": "https://huggingface.co/PixArt-alpha/PixArt-Sigma-XL-2-1024-MS/resolve/main/transformer/diffusion_pytorch_model.safetensors"
+        },
+        {
+            "base": "pixart-alpha",
+            "description": "PixArt-Alpha Diffusion model",
+            "filename": "PixArt-XL-2-1024-MS.safetensors",
+            "name": "PixArt-XL-2-1024-MS.safetensors (diffusion)",
+            "reference": "https://huggingface.co/PixArt-alpha/PixArt-XL-2-1024-MS",
+            "save_path": "diffusion_models/PixArt-Alpha",
+            "size": "2.45GB",
+            "type": "diffusion_model",
+            "url": "https://huggingface.co/PixArt-alpha/PixArt-XL-2-1024-MS/resolve/main/transformer/diffusion_pytorch_model.safetensors"
         },
         {
             "base": "Hunyuan-DiT",
@@ -3959,6 +3904,72 @@
             "size": "8.24GB",
             "type": "checkpoint",
             "url": "https://huggingface.co/comfyanonymous/hunyuan_dit_comfyui/resolve/main/hunyuan_dit_1.0.safetensors"
+        },
+        {
+            "base": "Hunyuan Video",
+            "description": "Huyuan Video diffusion model. repackaged version.",
+            "filename": "hunyuan_video_t2v_720p_bf16.safetensors",
+            "name": "Comfy-Org/hunyuan_video_t2v_720p_bf16.safetensors",
+            "reference": "https://huggingface.co/Comfy-Org/HunyuanVideo_repackaged",
+            "save_path": "diffusion_models/hunyuan_video",
+            "size": "25.6GB",
+            "type": "diffusion_model",
+            "url": "https://huggingface.co/Comfy-Org/HunyuanVideo_repackaged/resolve/main/split_files/diffusion_models/hunyuan_video_t2v_720p_bf16.safetensors"
+        },
+        {
+            "base": "Hunyuan Video",
+            "description": "Huyuan Video VAE model. repackaged version.",
+            "filename": "hunyuan_video_vae_bf16.safetensors",
+            "name": "Comfy-Org/hunyuan_video_vae_bf16.safetensors",
+            "reference": "https://huggingface.co/Comfy-Org/HunyuanVideo_repackaged",
+            "save_path": "default",
+            "size": "493MB",
+            "type": "VAE",
+            "url": "https://huggingface.co/Comfy-Org/HunyuanVideo_repackaged/resolve/main/split_files/vae/hunyuan_video_vae_bf16.safetensors"
+        },
+        {
+            "base": "Hunyuan Video",
+            "description": "Huyuan Video Image2Video diffusion model. repackaged version.",
+            "filename": "hunyuan_video_image_to_video_720p_bf16.safetensors",
+            "name": "Comfy-Org/hunyuan_video_image_to_video_720p_bf16.safetensors",
+            "reference": "https://huggingface.co/Comfy-Org/HunyuanVideo_repackaged",
+            "save_path": "diffusion_models/hunyuan_video",
+            "size": "25.6GB",
+            "type": "diffusion_model",
+            "url": "https://huggingface.co/Comfy-Org/HunyuanVideo_repackaged/resolve/main/split_files/diffusion_models/hunyuan_video_image_to_video_720p_bf16.safetensors"
+        },
+        {
+            "base": "LLaVA-Llama-3",
+            "description": "llava_llama3_fp8_scaled text encoder model. This is required for using Hunyuan Video.",
+            "filename": "llava_llama3_fp8_scaled.safetensors",
+            "name": "Comfy-Org/llava_llama3_fp8_scaled.safetensors",
+            "reference": "https://huggingface.co/Comfy-Org/HunyuanVideo_repackaged",
+            "save_path": "text_encoders",
+            "size": "9.09GB",
+            "type": "clip",
+            "url": "https://huggingface.co/Comfy-Org/HunyuanVideo_repackaged/resolve/main/split_files/text_encoders/llava_llama3_fp8_scaled.safetensors"
+        },
+        {
+            "base": "LLaVA-Llama-3",
+            "description": "llava_llama3_fp16 text encoder model. This is required for using Hunyuan Video.",
+            "filename": "llava_llama3_fp16.safetensors",
+            "name": "Comfy-Org/llava_llama3_fp16.safetensors",
+            "reference": "https://huggingface.co/Comfy-Org/HunyuanVideo_repackaged",
+            "save_path": "text_encoders",
+            "size": "16.1GB",
+            "type": "clip",
+            "url": "https://huggingface.co/Comfy-Org/HunyuanVideo_repackaged/resolve/main/split_files/text_encoders/llava_llama3_fp16.safetensors"
+        },
+        {
+            "base": "LLaVA-Llama-3",
+            "description": "llava_llama3_vision clip vison model. This is required for using Hunyuan Video Image2Video.",
+            "filename": "llava_llama3_vision.safetensors",
+            "name": "Comfy-Org/llava_llama3_vision.safetensors",
+            "reference": "https://huggingface.co/Comfy-Org/HunyuanVideo_repackaged",
+            "save_path": "text_encoders",
+            "size": "649MB",
+            "type": "clip_vision",
+            "url": "https://huggingface.co/Comfy-Org/HunyuanVideo_repackaged/resolve/main/split_files/clip_vision/llava_llama3_vision.safetensors"
         },
         {
             "base": "FLUX.1",
@@ -4280,23 +4291,12 @@
             "url": "https://huggingface.co/city96/FLUX.1-schnell-gguf/resolve/main/flux1-schnell-Q8_0.gguf"
         },
         {
-            "base": "SegGPT",
-            "description": "SegGPT",
-            "filename": "seggpt_vit_large.pth",
-            "name": "BAAI/SegGPT",
-            "reference": "https://huggingface.co/BAAI/SegGPT",
-            "save_path": "custom_nodes/comfyui-SegGPT",
-            "size": "1.48GB",
-            "type": "SegGPT",
-            "url": "https://huggingface.co/BAAI/SegGPT/resolve/main/seggpt_vit_large.pth"
-        },
-        {
             "base": "clip",
             "description": "Greatly improved TEXT + Detail (as CLIP-L for Flux.1)",
             "filename": "ViT-L-14-TEXT-detail-improved-hiT-GmP-HF.safetensors",
             "name": "ViT-L-14-TEXT-detail-improved-hiT-GmP-HF.safetensors [Long CLIP L]",
             "reference": "https://huggingface.co/zer0int",
-            "save_path": "clip/long_clip",
+            "save_path": "text_encoders/long_clip",
             "size": "931MB",
             "type": "clip",
             "url": "https://huggingface.co/zer0int/CLIP-GmP-ViT-L-14/resolve/main/ViT-L-14-TEXT-detail-improved-hiT-GmP-HF.safetensors"
@@ -4307,7 +4307,7 @@
             "filename": "ViT-L-14-TEXT-detail-improved-hiT-GmP-TE-only-HF.safetensors",
             "name": "ViT-L-14-TEXT-detail-improved-hiT-GmP-HF.safetensors [Long CLIP L]",
             "reference": "https://huggingface.co/zer0int",
-            "save_path": "clip/long_clip",
+            "save_path": "text_encoders/long_clip",
             "size": "323MB",
             "type": "clip",
             "url": "https://huggingface.co/zer0int/CLIP-GmP-ViT-L-14/resolve/main/ViT-L-14-TEXT-detail-improved-hiT-GmP-TE-only-HF.safetensors"
@@ -4509,6 +4509,391 @@
             "size": "9.37GB",
             "type": "checkpoint",
             "url": "https://huggingface.co/Lightricks/LTX-Video/resolve/main/ltx-video-2b-v0.9.safetensors"
+        },
+        {
+            "base": "LTX-Video",
+            "description": "LTX-Video is the first DiT-based video generation model capable of generating high-quality videos in real-time. It produces 24 FPS videos at a 768x512 resolution faster than they can be watched. Trained on a large-scale dataset of diverse videos, the model generates high-resolution videos with realistic and varied content.",
+            "filename": "ltx-video-2b-v0.9.1.safetensors",
+            "name": "LTX-Video 2B v0.9.1 Checkpoint",
+            "reference": "https://huggingface.co/Lightricks/LTX-Video",
+            "save_path": "checkpoints/LTXV",
+            "size": "5.72GB",
+            "type": "checkpoint",
+            "url": "https://huggingface.co/Lightricks/LTX-Video/resolve/main/ltx-video-2b-v0.9.1.safetensors"
+        },
+        {
+            "base": "LTX-Video",
+            "description": "LTX-Video is the first DiT-based video generation model capable of generating high-quality videos in real-time. It produces 24 FPS videos at a 768x512 resolution faster than they can be watched. Trained on a large-scale dataset of diverse videos, the model generates high-resolution videos with realistic and varied content.",
+            "filename": "ltx-video-2b-v0.9.5.safetensors",
+            "name": "LTX-Video 2B v0.9.5 Checkpoint",
+            "reference": "https://huggingface.co/Lightricks/LTX-Video",
+            "save_path": "checkpoints/LTXV",
+            "size": "6.34GB",
+            "type": "checkpoint",
+            "url": "https://huggingface.co/Lightricks/LTX-Video/resolve/main/ltx-video-2b-v0.9.5.safetensors"
+        },
+        {
+            "base": "FLUX.1",
+            "description": "ControlNet checkpoints for FLUX.1-dev model by Black Forest Labs.",
+            "filename": "flux-canny-controlnet-v3.safetensors",
+            "name": "XLabs-AI/flux-canny-controlnet-v3.safetensors",
+            "reference": "https://huggingface.co/XLabs-AI/flux-controlnet-collections",
+            "save_path": "xlabs/controlnets",
+            "size": "1.49GB",
+            "type": "controlnet",
+            "url": "https://huggingface.co/XLabs-AI/flux-controlnet-collections/resolve/main/flux-canny-controlnet-v3.safetensors"
+        },
+        {
+            "base": "FLUX.1",
+            "description": "ControlNet checkpoints for FLUX.1-dev model by Black Forest Labs.",
+            "filename": "flux-depth-controlnet-v3.safetensors",
+            "name": "XLabs-AI/flux-depth-controlnet-v3.safetensors",
+            "reference": "https://huggingface.co/XLabs-AI/flux-controlnet-collections",
+            "save_path": "xlabs/controlnets",
+            "size": "1.49GB",
+            "type": "controlnet",
+            "url": "https://huggingface.co/XLabs-AI/flux-controlnet-collections/resolve/main/flux-depth-controlnet-v3.safetensors"
+        },
+        {
+            "base": "FLUX.1",
+            "description": "ControlNet checkpoints for FLUX.1-dev model by Black Forest Labs.",
+            "filename": "flux-hed-controlnet-v3.safetensors",
+            "name": "XLabs-AI/flux-hed-controlnet-v3.safetensors",
+            "reference": "https://huggingface.co/XLabs-AI/flux-controlnet-collections",
+            "save_path": "xlabs/controlnets",
+            "size": "1.49GB",
+            "type": "controlnet",
+            "url": "https://huggingface.co/XLabs-AI/flux-controlnet-collections/resolve/main/flux-hed-controlnet-v3.safetensors"
+        },
+        {
+            "base": "FLUX.1",
+            "description": "A checkpoint with trained LoRAs for FLUX.1-dev model by Black Forest Labs",
+            "filename": "realism_lora.safetensors",
+            "name": "XLabs-AI/realism_lora.safetensors",
+            "reference": "https://huggingface.co/XLabs-AI/flux-lora-collection",
+            "save_path": "xlabs/loras",
+            "size": "44.8MB",
+            "type": "lora",
+            "url": "https://huggingface.co/XLabs-AI/flux-lora-collection/resolve/main/realism_lora.safetensors"
+        },
+        {
+            "base": "FLUX.1",
+            "description": "A checkpoint with trained LoRAs for FLUX.1-dev model by Black Forest Labs",
+            "filename": "art_lora.safetensors",
+            "name": "XLabs-AI/art_lora.safetensors",
+            "reference": "https://huggingface.co/XLabs-AI/flux-lora-collection",
+            "save_path": "xlabs/loras",
+            "size": "44.8MB",
+            "type": "lora",
+            "url": "https://huggingface.co/XLabs-AI/flux-lora-collection/resolve/main/scenery_lora.safetensors"
+        },
+        {
+            "base": "FLUX.1",
+            "description": "A checkpoint with trained LoRAs for FLUX.1-dev model by Black Forest Labs",
+            "filename": "mjv6_lora.safetensors",
+            "name": "XLabs-AI/mjv6_lora.safetensors",
+            "reference": "https://huggingface.co/XLabs-AI/flux-lora-collection",
+            "save_path": "xlabs/loras",
+            "size": "44.8MB",
+            "type": "lora",
+            "url": "https://huggingface.co/XLabs-AI/flux-lora-collection/resolve/main/mjv6_lora.safetensors"
+        },
+        {
+            "base": "FLUX.1",
+            "description": "A checkpoint with trained LoRAs for FLUX.1-dev model by Black Forest Labs",
+            "filename": "ip_adapter.safetensors",
+            "name": "XLabs-AI/flux-ip-adapter",
+            "reference": "https://huggingface.co/XLabs-AI/flux-ip-adapter",
+            "save_path": "xlabs/ipadapters",
+            "size": "982MB",
+            "type": "lora",
+            "url": "https://huggingface.co/XLabs-AI/flux-ip-adapter/resolve/main/ip_adapter.safetensors"
+        },
+        {
+            "base": "efficient_sam",
+            "description": "Install efficient_sam_s_cpu.jit into ComfyUI-YoloWorld-EfficientSAM",
+            "filename": "efficient_sam_s_cpu.jit",
+            "name": "efficient_sam_s_cpu.jit [ComfyUI-YoloWorld-EfficientSAM]",
+            "reference": "https://huggingface.co/camenduru/YoloWorld-EfficientSAM/tree/main",
+            "save_path": "yolo_world",
+            "size": "106.0MB",
+            "type": "efficient_sam",
+            "url": "https://huggingface.co/camenduru/YoloWorld-EfficientSAM/resolve/main/efficient_sam_s_cpu.jit"
+        },
+        {
+            "base": "efficient_sam",
+            "description": "Install efficient_sam_s_gpu.jit into ComfyUI-YoloWorld-EfficientSAM",
+            "filename": "efficient_sam_s_gpu.jit",
+            "name": "efficient_sam_s_gpu.jit [ComfyUI-YoloWorld-EfficientSAM]",
+            "reference": "https://huggingface.co/camenduru/YoloWorld-EfficientSAM/tree/main",
+            "save_path": "yolo_world",
+            "size": "106.0MB",
+            "type": "efficient_sam",
+            "url": "https://huggingface.co/camenduru/YoloWorld-EfficientSAM/resolve/main/efficient_sam_s_gpu.jit"
+        },
+        {
+            "base": "CustomNet",
+            "description": "CustomNet pretrained model for ComfyUI_CustomNet",
+            "filename": "customnet_v1.pt",
+            "name": "TencentARC/CustomNet V1",
+            "reference": "https://huggingface.co/TencentARC/CustomNet/tree/main",
+            "save_path": "checkpoints/customnet",
+            "size": "5.71GB",
+            "type": "CustomNet",
+            "url": "https://huggingface.co/TencentARC/CustomNet/resolve/main/customnet_v1.pt"
+        },
+        {
+            "base": "CustomNet",
+            "description": "CustomNet Inpaint pretrained model for ComfyUI_CustomNet",
+            "filename": "customnet_inpaint_v1.pt",
+            "name": "TencentARC/CustomNet Inpaint V1",
+            "reference": "https://huggingface.co/TencentARC/CustomNet/tree/main",
+            "save_path": "checkpoints/customnet",
+            "size": "5.71GB",
+            "type": "CustomNet",
+            "url": "https://huggingface.co/TencentARC/CustomNet/resolve/main/customnet_inpaint_v1.pt"
+        },
+        {
+            "base": "Janus-Pro",
+            "description": "[SNAPSHOT] Janus-Pro-1B model.[w/You cannot download this item on ComfyUI-Manager versions below V3.18]",
+            "filename": "<huggingface>",
+            "name": "deepseek-ai/Janus-Pro-1B",
+            "reference": "https://huggingface.co/deepseek-ai/Janus-Pro-1B",
+            "save_path": "Janus-Pro",
+            "size": "7.8GB",
+            "type": "Janus-Pro",
+            "url": "deepseek-ai/Janus-Pro-1B"
+        },
+        {
+            "base": "Janus-Pro",
+            "description": "[SNAPSHOT] Janus-Pro-7B model.[w/You cannot download this item on ComfyUI-Manager versions below V3.18]",
+            "filename": "<huggingface>",
+            "name": "deepseek-ai/Janus-Pro-7B",
+            "reference": "https://huggingface.co/deepseek-ai/Janus-Pro-7B",
+            "save_path": "Janus-Pro",
+            "size": "14.85GB",
+            "type": "Janus-Pro",
+            "url": "deepseek-ai/Janus-Pro-7B"
+        },
+        {
+            "base": "Kolors",
+            "description": "Kolors VAE",
+            "filename": "diffusion_pytorch_model.fp16.safetensors",
+            "name": "kolors/vae/diffusion_pytorch_model.fp16.safetensors",
+            "reference": "https://huggingface.co/Kwai-Kolors/Kolors",
+            "save_path": "vae/kolors",
+            "size": "167MB",
+            "type": "VAE",
+            "url": "https://huggingface.co/Kwai-Kolors/Kolors/resolve/main/vae/diffusion_pytorch_model.fp16.safetensors"
+        },
+        {
+            "base": "Kolors",
+            "description": "Kolors VAE",
+            "filename": "diffusion_pytorch_model.safetensors",
+            "name": "kolors/vae/diffusion_pytorch_model.safetensors",
+            "reference": "https://huggingface.co/Kwai-Kolors/Kolors",
+            "save_path": "vae/kolors",
+            "size": "335MB",
+            "type": "VAE",
+            "url": "https://huggingface.co/Kwai-Kolors/Kolors/resolve/main/vae/diffusion_pytorch_model.safetensors"
+        },
+        {
+            "base": "Wan2.1",
+            "description": "Wan2.1 difussion model for i2v 480p 14B (bf16)",
+            "filename": "wan2.1_i2v_480p_14B_bf16.safetensors",
+            "name": "Comfy-Org/Wan2.1 i2v 480p 14B (bf16)",
+            "reference": "https://huggingface.co/Comfy-Org/Wan_2.1_ComfyUI_repackaged",
+            "save_path": "diffusion_models/Wan2.1",
+            "size": "32.8GB",
+            "type": "diffusion_model",
+            "url": "https://huggingface.co/Comfy-Org/Wan_2.1_ComfyUI_repackaged/resolve/main/split_files/diffusion_models/wan2.1_i2v_480p_14B_bf16.safetensors"
+        },
+        {
+            "base": "Wan2.1",
+            "description": "Wan2.1 difussion model for i2v 480p 14B (fp16)",
+            "filename": "wan2.1_i2v_480p_14B_fp16.safetensors",
+            "name": "Comfy-Org/Wan2.1 i2v 480p 14B (fp16)",
+            "reference": "https://huggingface.co/Comfy-Org/Wan_2.1_ComfyUI_repackaged",
+            "save_path": "diffusion_models/Wan2.1",
+            "size": "32.8GB",
+            "type": "diffusion_model",
+            "url": "https://huggingface.co/Comfy-Org/Wan_2.1_ComfyUI_repackaged/resolve/main/split_files/diffusion_models/wan2.1_i2v_480p_14B_fp16.safetensors"
+        },
+        {
+            "base": "Wan2.1",
+            "description": "Wan2.1 difussion model for i2v 480p 14B (fp8_e4m3fn)",
+            "filename": "wan2.1_i2v_480p_14B_fp8_e4m3fn.safetensors",
+            "name": "Comfy-Org/Wan2.1 i2v 480p 14B (fp8_e4m3fn)",
+            "reference": "https://huggingface.co/Comfy-Org/Wan_2.1_ComfyUI_repackaged",
+            "save_path": "diffusion_models/Wan2.1",
+            "size": "16.4GB",
+            "type": "diffusion_model",
+            "url": "https://huggingface.co/Comfy-Org/Wan_2.1_ComfyUI_repackaged/resolve/main/split_files/diffusion_models/wan2.1_i2v_480p_14B_fp8_e4m3fn.safetensors"
+        },
+        {
+            "base": "Wan2.1",
+            "description": "Wan2.1 difussion model for i2v 480p 14B (fp8_scaled)",
+            "filename": "wan2.1_i2v_480p_14B_fp8_scaled.safetensors",
+            "name": "Comfy-Org/Wan2.1 i2v 480p 14B (fp8_scaled)",
+            "reference": "https://huggingface.co/Comfy-Org/Wan_2.1_ComfyUI_repackaged",
+            "save_path": "diffusion_models/Wan2.1",
+            "size": "16.4GB",
+            "type": "diffusion_model",
+            "url": "https://huggingface.co/Comfy-Org/Wan_2.1_ComfyUI_repackaged/resolve/main/split_files/diffusion_models/wan2.1_i2v_480p_14B_fp8_scaled.safetensors"
+        },
+        {
+            "base": "Wan2.1",
+            "description": "Wan2.1 difussion model for i2v 720p 14B (bf16)",
+            "filename": "wan2.1_i2v_720p_14B_bf16.safetensors",
+            "name": "Comfy-Org/Wan2.1 i2v 720p 14B (bf16)",
+            "reference": "https://huggingface.co/Comfy-Org/Wan_2.1_ComfyUI_repackaged",
+            "save_path": "diffusion_models/Wan2.1",
+            "size": "32.8GB",
+            "type": "diffusion_model",
+            "url": "https://huggingface.co/Comfy-Org/Wan_2.1_ComfyUI_repackaged/resolve/main/split_files/diffusion_models/wan2.1_i2v_720p_14B_bf16.safetensors"
+        },
+        {
+            "base": "Wan2.1",
+            "description": "Wan2.1 difussion model for i2v 720p 14B (fp16)",
+            "filename": "wan2.1_i2v_720p_14B_fp16.safetensors",
+            "name": "Comfy-Org/Wan2.1 i2v 720p 14B (fp16)",
+            "reference": "https://huggingface.co/Comfy-Org/Wan_2.1_ComfyUI_repackaged",
+            "save_path": "diffusion_models/Wan2.1",
+            "size": "32.8GB",
+            "type": "diffusion_model",
+            "url": "https://huggingface.co/Comfy-Org/Wan_2.1_ComfyUI_repackaged/resolve/main/split_files/diffusion_models/wan2.1_i2v_720p_14B_fp16.safetensors"
+        },
+        {
+            "base": "Wan2.1",
+            "description": "Wan2.1 difussion model for i2v 720p 14B (fp8_e4m3fn)",
+            "filename": "wan2.1_i2v_720p_14B_fp8_e4m3fn.safetensors",
+            "name": "Comfy-Org/Wan2.1 i2v 720p 14B (fp8_e4m3fn)",
+            "reference": "https://huggingface.co/Comfy-Org/Wan_2.1_ComfyUI_repackaged",
+            "save_path": "diffusion_models/Wan2.1",
+            "size": "16.4GB",
+            "type": "diffusion_model",
+            "url": "https://huggingface.co/Comfy-Org/Wan_2.1_ComfyUI_repackaged/resolve/main/split_files/diffusion_models/wan2.1_i2v_720p_14B_fp8_e4m3fn.safetensors"
+        },
+        {
+            "base": "Wan2.1",
+            "description": "Wan2.1 difussion model for i2v 720p 14B (fp8_scaled)",
+            "filename": "wan2.1_i2v_720p_14B_fp8_scaled.safetensors",
+            "name": "Comfy-Org/Wan2.1 i2v 720p 14B (fp8_scaled)",
+            "reference": "https://huggingface.co/Comfy-Org/Wan_2.1_ComfyUI_repackaged",
+            "save_path": "diffusion_models/Wan2.1",
+            "size": "16.4GB",
+            "type": "diffusion_model",
+            "url": "https://huggingface.co/Comfy-Org/Wan_2.1_ComfyUI_repackaged/resolve/main/split_files/diffusion_models/wan2.1_i2v_720p_14B_fp8_scaled.safetensors"
+        },
+        {
+            "base": "Wan2.1",
+            "description": "Wan2.1 difussion model for t2v 1.3B (bf16)",
+            "filename": "wan2.1_t2v_1.3B_bf16.safetensors",
+            "name": "Comfy-Org/Wan2.1 t2v 1.3B (bf16)",
+            "reference": "https://huggingface.co/Comfy-Org/Wan_2.1_ComfyUI_repackaged",
+            "save_path": "diffusion_models/Wan2.1",
+            "size": "2.84GB",
+            "type": "diffusion_model",
+            "url": "https://huggingface.co/Comfy-Org/Wan_2.1_ComfyUI_repackaged/resolve/main/split_files/diffusion_models/wan2.1_t2v_1.3B_bf16.safetensors"
+        },
+        {
+            "base": "Wan2.1",
+            "description": "Wan2.1 difussion model for t2v 1.3B (fp16)",
+            "filename": "wan2.1_t2v_1.3B_fp16.safetensors",
+            "name": "Comfy-Org/Wan2.1 t2v 1.3B (fp16)",
+            "reference": "https://huggingface.co/Comfy-Org/Wan_2.1_ComfyUI_repackaged",
+            "save_path": "diffusion_models/Wan2.1",
+            "size": "2.84GB",
+            "type": "diffusion_model",
+            "url": "https://huggingface.co/Comfy-Org/Wan_2.1_ComfyUI_repackaged/resolve/main/split_files/diffusion_models/wan2.1_t2v_1.3B_fp16.safetensors"
+        },
+        {
+            "base": "Wan2.1",
+            "description": "Wan2.1 difussion model for t2v 14B (bf16)",
+            "filename": "wan2.1_t2v_14B_bf16.safetensors",
+            "name": "Comfy-Org/Wan2.1 t2v 14B (bf16)",
+            "reference": "https://huggingface.co/Comfy-Org/Wan_2.1_ComfyUI_repackaged",
+            "save_path": "diffusion_models/Wan2.1",
+            "size": "28.6GB",
+            "type": "diffusion_model",
+            "url": "https://huggingface.co/Comfy-Org/Wan_2.1_ComfyUI_repackaged/resolve/main/split_files/diffusion_models/wan2.1_t2v_14B_bf16.safetensors"
+        },
+        {
+            "base": "Wan2.1",
+            "description": "Wan2.1 difussion model for t2v 14B (fp16)",
+            "filename": "wan2.1_t2v_14B_fp16.safetensors",
+            "name": "Comfy-Org/Wan2.1 t2v 14B (fp16)",
+            "reference": "https://huggingface.co/Comfy-Org/Wan_2.1_ComfyUI_repackaged",
+            "save_path": "diffusion_models/Wan2.1",
+            "size": "28.6GB",
+            "type": "diffusion_model",
+            "url": "https://huggingface.co/Comfy-Org/Wan_2.1_ComfyUI_repackaged/resolve/main/split_files/diffusion_models/wan2.1_t2v_14B_fp16.safetensors"
+        },
+        {
+            "base": "Wan2.1",
+            "description": "Wan2.1 difussion model for t2v 14B (fp8_e4m3fn)",
+            "filename": "wan2.1_t2v_14B_fp8_e4m3fn.safetensors",
+            "name": "Comfy-Org/Wan2.1 t2v 14B (fp8_e4m3fn)",
+            "reference": "https://huggingface.co/Comfy-Org/Wan_2.1_ComfyUI_repackaged",
+            "save_path": "diffusion_models/Wan2.1",
+            "size": "14.3GB",
+            "type": "diffusion_model",
+            "url": "https://huggingface.co/Comfy-Org/Wan_2.1_ComfyUI_repackaged/resolve/main/split_files/diffusion_models/wan2.1_t2v_14B_fp8_e4m3fn.safetensors"
+        },
+        {
+            "base": "Wan2.1",
+            "description": "Wan2.1 difussion model for t2v 14B (fp8_scaled)",
+            "filename": "wan2.1_t2v_14B_fp8_scaled.safetensors",
+            "name": "Comfy-Org/Wan2.1 t2v 14B (fp8_scaled)",
+            "reference": "https://huggingface.co/Comfy-Org/Wan_2.1_ComfyUI_repackaged",
+            "save_path": "diffusion_models/Wan2.1",
+            "size": "14.3GB",
+            "type": "diffusion_model",
+            "url": "https://huggingface.co/Comfy-Org/Wan_2.1_ComfyUI_repackaged/resolve/main/split_files/diffusion_models/wan2.1_t2v_14B_fp8_scaled.safetensors"
+        },
+        {
+            "base": "Wan2.1",
+            "description": "Wan2.1 VAE model",
+            "filename": "wan_2.1_vae.safetensors",
+            "name": "Comfy-Org/Wan2.1 VAE",
+            "reference": "https://huggingface.co/Comfy-Org/Wan_2.1_ComfyUI_repackaged",
+            "save_path": "vae",
+            "size": "254MB",
+            "type": "vae",
+            "url": "https://huggingface.co/Comfy-Org/Wan_2.1_ComfyUI_repackaged/resolve/main/split_files/vae/wan_2.1_vae.safetensors"
+        },
+        {
+            "base": "clip_vision_h",
+            "description": "clip_vision_h model for Wan2.1",
+            "filename": "clip_vision_h.safetensors",
+            "name": "Comfy-Org/clip_vision_h.safetensors",
+            "reference": "https://huggingface.co/Comfy-Org/Wan_2.1_ComfyUI_repackaged",
+            "save_path": "clip_vision",
+            "size": "1.26GB",
+            "type": "clip_vision",
+            "url": "https://huggingface.co/Comfy-Org/Wan_2.1_ComfyUI_repackaged/resolve/main/split_files/clip_vision/clip_vision_h.safetensors"
+        },
+        {
+            "base": "umt5_xxl",
+            "description": "umt5_xxl_fp16 text encoder for Wan2.1",
+            "filename": "umt5_xxl_fp16.safetensors",
+            "name": "Comfy-Org/umt5_xxl_fp16.safetensors",
+            "reference": "https://huggingface.co/Comfy-Org/Wan_2.1_ComfyUI_repackaged",
+            "save_path": "text_encoders",
+            "size": "11.4GB",
+            "type": "clip",
+            "url": "https://huggingface.co/Comfy-Org/Wan_2.1_ComfyUI_repackaged/resolve/main/split_files/text_encoders/umt5_xxl_fp16.safetensors"
+        },
+        {
+            "base": "umt5_xxl",
+            "description": "umt5_xxl_fp8_e4m3fn_scaled text encoder for Wan2.1",
+            "filename": "umt5_xxl_fp8_e4m3fn_scaled.safetensors",
+            "name": "Comfy-Org/umt5_xxl_fp8_e4m3fn_scaled.safetensors",
+            "reference": "https://huggingface.co/Comfy-Org/Wan_2.1_ComfyUI_repackaged",
+            "save_path": "text_encoders",
+            "size": "6.74GB",
+            "type": "clip",
+            "url": "https://huggingface.co/Comfy-Org/Wan_2.1_ComfyUI_repackaged/resolve/main/split_files/text_encoders/umt5_xxl_fp8_e4m3fn_scaled.safetensors"
         }
     ]
 }

@@ -4,20 +4,25 @@ import sys
 from typing import Sequence, Mapping, Any, Union
 import torch
 import gradio as gr
-from PIL import Image
+from PIL import Image, ImageChops
 from huggingface_hub import hf_hub_download
-import spaces
 from comfy import model_management
 
 hf_hub_download(repo_id="black-forest-labs/FLUX.1-Redux-dev", filename="flux1-redux-dev.safetensors", local_dir="models/style_models")
 hf_hub_download(repo_id="black-forest-labs/FLUX.1-Depth-dev", filename="flux1-depth-dev.safetensors", local_dir="models/diffusion_models")
+hf_hub_download(repo_id="black-forest-labs/FLUX.1-Canny-dev", filename="flux1-canny-dev.safetensors", local_dir="models/controlnet")
+hf_hub_download(repo_id="XLabs-AI/flux-controlnet-collections", filename="flux-canny-controlnet-v3.safetensors", local_dir="models/controlnet")
 hf_hub_download(repo_id="Comfy-Org/sigclip_vision_384", filename="sigclip_vision_patch14_384.safetensors", local_dir="models/clip_vision")
 hf_hub_download(repo_id="Kijai/DepthAnythingV2-safetensors", filename="depth_anything_v2_vitl_fp32.safetensors", local_dir="models/depthanything")
+
 hf_hub_download(repo_id="black-forest-labs/FLUX.1-dev", filename="ae.safetensors", local_dir="models/vae/FLUX1")
 hf_hub_download(repo_id="comfyanonymous/flux_text_encoders", filename="clip_l.safetensors", local_dir="models/text_encoders")
 t5_path = hf_hub_download(repo_id="comfyanonymous/flux_text_encoders", filename="t5xxl_fp16.safetensors", local_dir="models/text_encoders/t5")
 
-# Import all the necessary functions from the original script
+
+# At the top of your file, add this import if it's not already there
+import os
+import folder_paths
 def get_value_at_index(obj: Union[Sequence, Mapping], index: int) -> Any:
     try:
         return obj[index]
@@ -90,8 +95,6 @@ from nodes import (
 import_custom_nodes()
 
 # Global variables for preloaded models and constants
-#with torch.inference_mode():
-    # Initialize constants
 intconstant = NODE_CLASS_MAPPINGS["INTConstant"]()
 CONST_1024 = intconstant.get_value(value=1024)
 
@@ -112,6 +115,7 @@ unetloader = UNETLoader()
 UNET_MODEL = unetloader.load_unet(
     unet_name="flux1-depth-dev.safetensors", weight_dtype="default"
 )
+
 
 # Load CLIP Vision
 clipvisionloader = CLIPVisionLoader()
@@ -136,10 +140,17 @@ DEPTH_MODEL = downloadandloaddepthanythingv2model.loadmodel(
     model="depth_anything_v2_vitl_fp32.safetensors"
 )
 
+controlnetloader = NODE_CLASS_MAPPINGS["ControlNetLoader"]()
+CANNY_XLABS_MODEL = controlnetloader.load_controlnet(
+    control_net_name="flux-canny-controlnet-v3.safetensors"
+    )
+
+
 cliptextencode = CLIPTextEncode()
 loadimage = LoadImage()
 vaeencode = VAEEncode()
 fluxguidance = NODE_CLASS_MAPPINGS["FluxGuidance"]()
+controlNetApplyAdvanced = NODE_CLASS_MAPPINGS["ControlNetApplyAdvanced"]()
 instructpixtopixconditioning = NODE_CLASS_MAPPINGS["InstructPixToPixConditioning"]()
 clipvisionencode = CLIPVisionEncode()
 stylemodelapplyadvanced = NODE_CLASS_MAPPINGS["StyleModelApplyAdvanced"]()
@@ -153,6 +164,7 @@ cr_text = NODE_CLASS_MAPPINGS["CR Text"]()
 saveimage = SaveImage()
 getimagesizeandcount = NODE_CLASS_MAPPINGS["GetImageSizeAndCount"]()
 depthanything_v2 = NODE_CLASS_MAPPINGS["DepthAnything_V2"]()
+canny_prossessor = NODE_CLASS_MAPPINGS["Canny"]()
 imageresize = NODE_CLASS_MAPPINGS["ImageResize+"]()
 
 model_loaders = [CLIP_MODEL, VAE_MODEL, UNET_MODEL, CLIP_VISION_MODEL]
@@ -161,8 +173,8 @@ model_management.load_models_gpu([
     loader[0].patcher if hasattr(loader[0], 'patcher') else loader[0] for loader in model_loaders
 ])
 
-@spaces.GPU
-def generate_image(prompt, structure_image, style_image, depth_strength=15, style_strength=0.5, progress=gr.Progress(track_tqdm=True)) -> str:
+
+def generate_image(prompt, structure_image, style_image, depth_strength=15, canny_strength=30, style_strength=0.5, steps=28, progress=gr.Progress(track_tqdm=True)):
     """Main generation function that processes inputs and returns the path to the generated image."""
     with torch.inference_mode():
         # Set up CLIP
@@ -207,16 +219,36 @@ def generate_image(prompt, structure_image, style_image, depth_strength=15, styl
             vae=get_value_at_index(VAE_MODEL, 0),
         )
         
+        # Process canny
+        canny_processed = canny_prossessor.detect_edge(
+            image=get_value_at_index(size_info, 0), 
+            low_threshold=0.4, 
+            high_threshold=0.8
+            )
+        
+        #Apply canny Advanced
+        canny_conditions = controlNetApplyAdvanced.apply_controlnet(
+            positive=get_value_at_index(text_encoded, 0), 
+            negative=get_value_at_index(empty_text, 0), 
+            control_net=get_value_at_index(CANNY_XLABS_MODEL, 0), 
+            image=get_value_at_index(canny_processed, 0), 
+            strength=canny_strength, 
+            start_percent=0.0, 
+            end_percent=0.5, 
+            vae=get_value_at_index(VAE_MODEL, 0)
+            )
+        
         # Process depth
         depth_processed = depthanything_v2.process(
             da_model=get_value_at_index(DEPTH_MODEL, 0),
             images=get_value_at_index(size_info, 0),
         )
         
+        
         # Apply Flux guidance
         flux_guided = fluxguidance.append(
             guidance=depth_strength,
-            conditioning=get_value_at_index(text_encoded, 0),
+            conditioning=get_value_at_index(canny_conditions, 0),
         )
         
         # Process style image
@@ -232,7 +264,7 @@ def generate_image(prompt, structure_image, style_image, depth_strength=15, styl
         # Set up conditioning
         conditioning = instructpixtopixconditioning.encode(
             positive=get_value_at_index(flux_guided, 0),
-            negative=get_value_at_index(empty_text, 0),
+            negative=get_value_at_index(canny_conditions, 1),
             vae=get_value_at_index(VAE_MODEL, 0),
             pixels=get_value_at_index(depth_processed, 0),
         )
@@ -261,7 +293,7 @@ def generate_image(prompt, structure_image, style_image, depth_strength=15, styl
         # Set up scheduler
         schedule = basicscheduler.get_sigmas(
             scheduler="simple",
-            steps=28,
+            steps=steps,
             denoise=1,
             model=get_value_at_index(UNET_MODEL, 0),
         )
@@ -284,56 +316,40 @@ def generate_image(prompt, structure_image, style_image, depth_strength=15, styl
             vae=get_value_at_index(VAE_MODEL, 0),
         )
         
-        # Save image
-        prefix = cr_text.text_multiline(text="Flux_BFL_Depth_Redux")
-        
-        saved = saveimage.save_images(
-            filename_prefix=get_value_at_index(prefix, 0),
+        # Use SaveImage node to save the image
+        saved_data = saveimage.save_images(
+            filename_prefix="zen",
             images=get_value_at_index(decoded, 0),
         )
-        saved_path = f"output/{saved['ui']['images'][0]['filename']}"
-        return saved_path
-
-# Create Gradio interface
-
-examples = [
-    ["", "mona.png", "receita-tacos.webp", 15, 0.6],
-    ["a woman looking at a house catching fire on the background", "disaster_girl.png", "abaporu.jpg", 15, 0.15],
-    ["istanbul aerial, dramatic photography", "natasha.png", "istambul.jpg", 15, 0.5],
-]
-
-output_image = gr.Image(label="Generated Image")
+        
+        return "./zen.png"
 
 with gr.Blocks() as app:
-    gr.Markdown("# FLUX Style Shaping")
-    gr.Markdown("Flux[dev] Redux + Flux[dev] Depth ComfyUI workflow by [Nathan Shipley](https://x.com/CitizenPlain) running directly on Gradio. [workflow](https://gist.github.com/nathanshipley/7a9ac1901adde76feebe58d558026f68) - [how to convert your any comfy workflow to gradio (soon)](#)")
+    gr.Markdown("# FLUX Zen Style Depth+Canny")
+    gr.Markdown("Flux[dev] Redux + Flux[dev] Depth and XLabs Canny based on the space FLUX Style Shaping")
+
     with gr.Row():
         with gr.Column():
             prompt_input = gr.Textbox(label="Prompt", placeholder="Enter your prompt here...")
             with gr.Row():
                 with gr.Group():
-                    structure_image = gr.Image(label="Structure Image", type="filepath")
+                    structure_image = gr.Image(image_mode='RGB', label="Structure Image", type="filepath")
                     depth_strength = gr.Slider(minimum=0, maximum=50, value=15, label="Depth Strength")
+                    canny_strength = gr.Slider(minimum=0, maximum=1.0, value=0.30, label="Canny Strength")
+                    steps = gr.Slider(minimum=0, maximum=50, value=28, label="Steps")
                 with gr.Group():
                     style_image = gr.Image(label="Style Image", type="filepath")
                     style_strength = gr.Slider(minimum=0, maximum=1, value=0.5, label="Style Strength")
-            generate_btn = gr.Button("Generate")
+            generate_btn = gr.Button("Generate", value=True)
             
-            gr.Examples(
-                examples=examples,
-                inputs=[prompt_input, structure_image, style_image, depth_strength, style_strength],
-                outputs=[output_image],
-                fn=generate_image,
-                cache_examples=True,
-                cache_mode="lazy"
-            )
-        
         with gr.Column():
-            output_image.render()
+            # Replace gallery with a single image output
+            output_image = gr.Image(label="Generated Image")
+
     generate_btn.click(
         fn=generate_image,
-        inputs=[prompt_input, structure_image, style_image, depth_strength, style_strength],
-        outputs=[output_image]
+        inputs=[prompt_input, structure_image, style_image, depth_strength, canny_strength, style_strength, steps],
+        outputs=output_image
     )
 
 if __name__ == "__main__":
