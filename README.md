@@ -10,15 +10,15 @@ We will release the codes of the version leveraging ZenCtrl architecture.
 
 ---
 
-## �� Key Features
+##  Key Features
 
-- �� **Style-Structure Fusion**: Seamlessly transfers style from Image A into the spatial geometry of Image B.
-- �� **Model-Driven Pipeline**: No UI dependencies; powered entirely through locally executed Python scripts.
-- �� **Modular**: Easily plug in other models or replace components (ControlNet, encoders, etc.).
+-  **Style-Structure Fusion**: Seamlessly transfers style from Image A into the spatial geometry of Image B.
+-  **Model-Driven Pipeline**: No UI dependencies; powered entirely through locally executed Python scripts.
+-  **Modular**: Easily plug in other models or replace components (ControlNet, encoders, etc.).
 
 ---
 
-## �� How It Works
+##  How It Works
 
 1. **Inputs**:
    - **Image A**: Style reference
@@ -38,7 +38,7 @@ We will release the codes of the version leveraging ZenCtrl architecture.
 
 ---
 
-## �� Project Structure
+##  Project Structure
 
 ```
 ├── models/
@@ -58,7 +58,7 @@ We will release the codes of the version leveraging ZenCtrl architecture.
 
 ---
 
-## �� Quick Start
+##  Quick Start
 
 1. **Install dependencies**
 
@@ -82,7 +82,7 @@ Options:
 
 ---
 
-## �� Example
+##  Example
 
 | Style (Image A) | Structure (Image B) | Output |
 |----------------|---------------------|--------|
@@ -90,7 +90,7 @@ Options:
 
 ---
 
-## �� Use Cases
+##  Use Cases
 
 - AI-powered visual storytelling
 - Concept art and virtual scene design
@@ -99,7 +99,7 @@ Options:
 
 ---
 
-## �� Credits & Inspiration
+##  Credits & Inspiration
 
 - [Nathan Shipley's work](https://gist.github.com/nathanshipley/7a9ac1901adde76feebe58d558026f68) for the idea spark
 - Hugging Face models:
@@ -112,7 +112,7 @@ Options:
 
 ---
 
-## �� Try Also: ZenCtrl – Modular Agentic Image Control
+##  Try Also: ZenCtrl – Modular Agentic Image Control
 
 If you enjoyed this project, you may also like [**ZenCtrl**](https://github.com/FotographerAI/ZenCtrl), our open-source **agentic visual control toolkit** for generative image pipelines that we are developing.
 
@@ -132,6 +132,6 @@ With ZenCtrl, we aim to:
 ---
 
 
-## �� Contact
+##  Contact
 
 Want to collaborate or learn more? Reach out via GitHub or drop us a message!

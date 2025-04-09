@@ -21,3 +21,6 @@ venv/
 *.log
 web_custom_versions/
 .DS_Store
+.ci/
+.gradio/
+.mypy_cache/
