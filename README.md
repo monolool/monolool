@@ -36,25 +36,6 @@ We will release the codes of the version leveraging ZenCtrl architecture.
    - Flux-style injection merges the style and structure via guided conditioning
    - Output image retains Image B’s layout but adopts Image A’s artistic features
 
----
-
-##  Project Structure
-
-```
-├── models/
-│   ├── controlnet/
-│   ├── stable-diffusion/
-├── scripts/
-│   ├── extract_edges.py       # Canny edge map from Image B
-│   ├── estimate_depth.py      # Generate depth map
-│   ├── encode_style.py        # Encode Image A (prompt or features)
-│   └── generate.py            # Full generation pipeline
-├── assets/
-│   ├── input_style.jpg
-│   ├── input_structure.jpg
-│   └── output.jpg
-├── README.md
-```
 
 ---
 
