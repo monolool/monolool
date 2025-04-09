@@ -50,18 +50,10 @@ pip install -r requirements.txt
 2. **Run generation**
 
 ```bash
-python scripts/generate.py \
-  --style_image assets/input_style.jpg \
-  --structure_image assets/input_structure.jpg \
-  --output_image assets/output.jpg
+gradio app.py
 ```
 
-Options:
-- `--use_depth true`
-- `--use_canny true`
-- `--style_prompt "a painting in van Gogh style"`
-
----
+<!-- ---
 
 ##  Example
 
