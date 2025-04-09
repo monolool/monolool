@@ -59,7 +59,7 @@ gradio app.py
 
 | Style (Image A) | Structure (Image B) | Output |
 |----------------|---------------------|--------|
-| ![](assets/input_style.jpg) | ![](assets/input_structure.jpg) | ![](assets/output.jpg) |
+| ![](assets/input_style.jpg) | ![](assets/input_structure.jpg) | ![](assets/output.jpg) | -->
 
 ---
 
