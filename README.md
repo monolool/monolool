@@ -76,9 +76,10 @@ gradio app.py
 
 - [Nathan Shipley's work](https://gist.github.com/nathanshipley/7a9ac1901adde76feebe58d558026f68) for the idea spark
 - Hugging Face models:
-  - [Stable Diffusion](https://huggingface.co/CompVis/stable-diffusion-v1-4)
-  - [ControlNet for Canny/Depth](https://huggingface.co/lllyasviel/ControlNet)
-  - [MiDaS for Depth](https://huggingface.co/Intel/dpt-large)
+  - [Flux](https://huggingface.co/black-forest-labs/FLUX.1-dev)
+  - [Flux Canny](https://huggingface.co/black-forest-labs/FLUX.1-Canny-dev)
+  - [Flux dev](https://huggingface.co/black-forest-labs/FLUX.1-Depth-dev)
+  - [DepthAnything](https://huggingface.co/Kijai/DepthAnythingV2-safetensors)
 - Flux-based prompt handling inspired by multimodal conditioning techniques
 
 ---
