@@ -32,7 +32,7 @@ We will release the codes of the version leveraging ZenCtrl architecture.
    - Style prompts or embeddings extracted from Image A via a CLIP/T5/BLIP2 encoder
 
 4. **Generation Phase**:
-   - A diffusion model (e.g., Stable Diffusion + ControlNet) is used
+   - A diffusion model (e.g., Flux + Canny) is used
    - Flux-style injection merges the style and structure via guided conditioning
    - Output image retains Image B’s layout but adopts Image A’s artistic features
 
@@ -80,7 +80,6 @@ gradio app.py
   - [Flux Canny](https://huggingface.co/black-forest-labs/FLUX.1-Canny-dev)
   - [Flux dev](https://huggingface.co/black-forest-labs/FLUX.1-Depth-dev)
   - [DepthAnything](https://huggingface.co/Kijai/DepthAnythingV2-safetensors)
-- Flux-based prompt handling inspired by multimodal conditioning techniques
 
 ---
 
