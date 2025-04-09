@@ -84,8 +84,6 @@ gradio app.py
 
 ---
 
----
-
 ##  Try Also: ZenCtrl – Modular Agentic Image Control
 
 If you enjoyed this project, you may also like [**ZenCtrl**](https://github.com/FotographerAI/ZenCtrl), our open-source **agentic visual control toolkit** for generative image pipelines that we are developing.
