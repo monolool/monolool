@@ -324,7 +324,7 @@ def generate_image(prompt, structure_image, style_image, depth_strength=15, cann
         
         return "./zen.png"
 
-with gr.Blocks() as app:
+with gr.Blocks() as demo:
     gr.Markdown("# FLUX Zen Style Depth+Canny")
     gr.Markdown("Flux[dev] Redux + Flux[dev] Depth and XLabs Canny based on the space FLUX Style Shaping")
 
@@ -353,4 +353,4 @@ with gr.Blocks() as app:
     )
 
 if __name__ == "__main__":
-    app.launch(share=True)
+    demo.launch(share=True)
