@@ -26,7 +26,7 @@ We will release the codes of the version leveraging ZenCtrl architecture.
 
 2. **Structural Conditioning**:
    - **Canny Edge Map** of Image B
-   - **Depth Map** via a pre-trained MiDaS model or similar
+   - **Depth Map** via a pre-trained DepthAnything model
 
 3. **Style Conditioning**:
    - Style prompts or embeddings extracted from Image A via a CLIP/T5/BLIP2 encoder
