@@ -26,35 +26,16 @@ We will release the codes of the version leveraging ZenCtrl architecture.
 
 2. **Structural Conditioning**:
    - **Canny Edge Map** of Image B
-   - **Depth Map** via a pre-trained MiDaS model or similar
+   - **Depth Map** via a pre-trained DepthAnything model
 
 3. **Style Conditioning**:
    - Style prompts or embeddings extracted from Image A via a CLIP/T5/BLIP2 encoder
 
 4. **Generation Phase**:
-   - A diffusion model (e.g., Stable Diffusion + ControlNet) is used
+   - A diffusion model (e.g., Flux + Canny) is used
    - Flux-style injection merges the style and structure via guided conditioning
    - Output image retains Image B’s layout but adopts Image A’s artistic features
 
----
-
-##  Project Structure
-
-```
-├── models/
-│   ├── controlnet/
-│   ├── stable-diffusion/
-├── scripts/
-│   ├── extract_edges.py       # Canny edge map from Image B
-│   ├── estimate_depth.py      # Generate depth map
-│   ├── encode_style.py        # Encode Image A (prompt or features)
-│   └── generate.py            # Full generation pipeline
-├── assets/
-│   ├── input_style.jpg
-│   ├── input_structure.jpg
-│   └── output.jpg
-├── README.md
-```
 
 ---
 
@@ -69,24 +50,16 @@ pip install -r requirements.txt
 2. **Run generation**
 
 ```bash
-python scripts/generate.py \
-  --style_image assets/input_style.jpg \
-  --structure_image assets/input_structure.jpg \
-  --output_image assets/output.jpg
+gradio app.py
 ```
 
-Options:
-- `--use_depth true`
-- `--use_canny true`
-- `--style_prompt "a painting in van Gogh style"`
-
----
+<!-- ---
 
 ##  Example
 
 | Style (Image A) | Structure (Image B) | Output |
 |----------------|---------------------|--------|
-| ![](assets/input_style.jpg) | ![](assets/input_structure.jpg) | ![](assets/output.jpg) |
+| ![](assets/input_style.jpg) | ![](assets/input_structure.jpg) | ![](assets/output.jpg) | -->
 
 ---
 
@@ -103,12 +76,10 @@ Options:
 
 - [Nathan Shipley's work](https://gist.github.com/nathanshipley/7a9ac1901adde76feebe58d558026f68) for the idea spark
 - Hugging Face models:
-  - [Stable Diffusion](https://huggingface.co/CompVis/stable-diffusion-v1-4)
-  - [ControlNet for Canny/Depth](https://huggingface.co/lllyasviel/ControlNet)
-  - [MiDaS for Depth](https://huggingface.co/Intel/dpt-large)
-- Flux-based prompt handling inspired by multimodal conditioning techniques
-
----
+  - [Flux](https://huggingface.co/black-forest-labs/FLUX.1-dev)
+  - [Flux Canny](https://huggingface.co/black-forest-labs/FLUX.1-Canny-dev)
+  - [Flux dev](https://huggingface.co/black-forest-labs/FLUX.1-Depth-dev)
+  - [DepthAnything](https://huggingface.co/Kijai/DepthAnythingV2-safetensors)
 
 ---
 
