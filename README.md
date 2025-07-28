@@ -6,7 +6,7 @@ This project implements a custom **image-to-image style transfer pipeline** that
 
 We just added canny to  [this work by Nathan Shipley](https://gist.github.com/nathanshipley/7a9ac1901adde76feebe58d558026f68), where the fusion of style and structure creates artistic visual outputs. It's an easy edut 
 
-We will release the codes of the version leveraging ZenCtrl architecture.
+We will release the codes of the version leveraging Monolool architecture.
 
 ---
 
@@ -83,24 +83,6 @@ gradio app.py
 
 ---
 
-##  Try Also: ZenCtrl – Modular Agentic Image Control
-
-If you enjoyed this project, you may also like [**ZenCtrl**](https://github.com/FotographerAI/ZenCtrl), our open-source **agentic visual control toolkit** for generative image pipelines that we are developing.
-
-ZenCtrl can be combined with this style transfer project to introduce additional layers of control, allowing for more refined composition before or after stylization. It’s especially useful when working with structured scenes, human subjects, or product imagery.
-
-With ZenCtrl, we aim to:
-- Chain together preprocessing, control, editing, and postprocessing modules
-- Create workflows for tasks like **product photography**, **try-on**, **background swaps**, and **face editing**
-- Use control adapters like **canny, depth, pose, segmentation**, and more
-- Easily integrate with APIs or run it in a Hugging Face Space
-
-> Whether you're refining structure by changing the background layout before stylization or editing the results afterward, ZenCtrl gives you full compositional control across the image generation stack.
-
-👉 [Explore ZenCtrl on GitHub](https://github.com/FotographerAI/ZenCtrl)
-👉 [Try the ZenCtrl Demo on Hugging Face Spaces](https://huggingface.co/spaces/fotographerai/ZenCtrl)
-
----
 
 
 ##  Contact
