@@ -53,13 +53,7 @@ pip install -r requirements.txt
 gradio app.py
 ```
 
-<!-- ---
 
-##  Example
-
-| Style (Image A) | Structure (Image B) | Output |
-|----------------|---------------------|--------|
-| ![](assets/input_style.jpg) | ![](assets/input_structure.jpg) | ![](assets/output.jpg) | -->
 
 ---
 
